@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Services — Roofs-N-More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .svc-card {
+    background: #fff; border: 3.5px solid var(--rnm-ink); border-radius: 28px;
+    box-shadow: 6px 8px 0 var(--rnm-ink);
+    overflow: hidden; display: grid; grid-template-rows: 220px auto;
+    transition: transform 180ms var(--rnm-ease-bounce);
+    text-decoration: none; color: inherit;
+  }
+  .svc-card:hover { transform: translate(-3px, -3px); box-shadow: 9px 11px 0 var(--rnm-ink); }
+  .svc-card .cover { border-bottom: 3px solid var(--rnm-ink); position: relative; }
+  .svc-card .cover .tag {
+    position: absolute; top: 16px; left: 16px;
+    background: #fff; border: 2.5px solid var(--rnm-ink); padding: 6px 14px; border-radius: 999px;
+    font-family: var(--rnm-font-display); font-weight: 600; font-size: 13px;
+    box-shadow: 2px 2px 0 var(--rnm-ink);
+  }
+  .svc-card .body { padding: 28px 30px 32px; }
+  .svc-card h3 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 32px; margin: 0 0 10px; }
+  .svc-card p { font-size: 16px; line-height: 1.55; color: var(--rnm-ink-soft); margin: 0 0 18px; }
+  .svc-card .bullets { list-style: none; padding: 0; margin: 0 0 20px; display: grid; gap: 8px; }
+  .svc-card .bullets li { font-size: 15px; display: flex; gap: 8px; align-items: flex-start; }
+  .svc-card .bullets li::before { content: "✓"; color: var(--rnm-orange-dark); font-weight: 900; font-size: 17px; }
+  .svc-card .arrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--rnm-font-display); font-weight: 600; font-size: 17px; color: var(--rnm-blue-dark); }
+
+  /* Cover illustrations (CSS-drawn) */
+  .cover-roof { background:
+    linear-gradient(#FFE4C4, #FFE4C4) no-repeat 0 60%/100% 40%,
+    linear-gradient(to bottom, var(--rnm-blue-soft) 60%, transparent 60%),
+    #EAF6FC;
+    position: relative;
+  }
+  .cover-roof::before {
+    content: ""; position: absolute; left: 50%; top: 20%; transform: translateX(-50%);
+    width: 0; height: 0; border-left: 180px solid transparent; border-right: 180px solid transparent;
+    border-bottom: 110px solid var(--rnm-orange);
+    filter: drop-shadow(4px 5px 0 var(--rnm-ink));
+  }
+  .cover-roof::after {
+    content: ""; position: absolute; left: 50%; top: calc(20% + 110px); transform: translateX(-50%);
+    width: 280px; height: 50px; background: var(--rnm-blue); border: 3px solid var(--rnm-ink);
+    box-shadow: 4px 5px 0 var(--rnm-ink);
+  }
+
+  .cover-siding { background: var(--rnm-sand); position: relative; overflow: hidden; }
+  .cover-siding::before {
+    content: ""; position: absolute; inset: 20px;
+    background: repeating-linear-gradient(to bottom, var(--rnm-blue) 0 24px, var(--rnm-blue-dark) 24px 26px, var(--rnm-blue) 26px 50px, var(--rnm-blue-dark) 50px 52px);
+    border: 3px solid var(--rnm-ink); border-radius: 12px;
+    box-shadow: 4px 5px 0 var(--rnm-ink);
+  }
+
+  .cover-windows { background: var(--rnm-sky); position: relative; display: grid; place-items: center; }
+  .cover-windows::before {
+    content: ""; width: 180px; height: 160px;
+    background:
+      linear-gradient(var(--rnm-ink), var(--rnm-ink)) 50% 50%/4px 100%,
+      linear-gradient(var(--rnm-ink), var(--rnm-ink)) 50% 50%/100% 4px,
+      linear-gradient(135deg, #FFF 40%, var(--rnm-blue-soft) 60%);
+    background-repeat: no-repeat;
+    border: 4px solid var(--rnm-ink); border-radius: 6px;
+    box-shadow: 5px 6px 0 var(--rnm-ink);
+  }
+
+  .cover-gutters { background: linear-gradient(var(--rnm-blue-soft), var(--rnm-blue-soft)) no-repeat 0 70%/100% 30%, #FFF8EE; position: relative; overflow: hidden; }
+  .cover-gutters::before {
+    content: ""; position: absolute; top: 30%; left: 15%; right: 15%; height: 30px;
+    background: var(--rnm-orange); border: 3px solid var(--rnm-ink);
+    border-radius: 0 0 14px 14px;
+    box-shadow: 4px 5px 0 var(--rnm-ink);
+  }
+  .cover-gutters::after {
+    content: ""; position: absolute; top: calc(30% - 40px); left: 15%; right: 15%; height: 40px;
+    background: linear-gradient(135deg, var(--rnm-ink) 25%, transparent 25.5%),
+                linear-gradient(-135deg, var(--rnm-ink) 25%, transparent 25.5%);
+    background-size: 40px 40px; background-repeat: repeat-x;
+    background-color: var(--rnm-orange-dark);
+    border-top: 3px solid var(--rnm-ink);
+  }
+
+  .how { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .step { text-align: center; padding: 28px 20px; border: 3px solid var(--rnm-ink); border-radius: 20px; background: #fff; box-shadow: 4px 5px 0 var(--rnm-ink); position: relative; }
+  .step:nth-child(2n) { background: var(--rnm-sky); transform: rotate(-1deg); }
+  .step:nth-child(2n+1) { transform: rotate(0.5deg); }
+  .step .n { font-family: var(--rnm-font-display); font-weight: 700; font-size: 48px; color: var(--rnm-orange); line-height: 1; }
+  .step h3 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 20px; margin: 8px 0 6px; }
+  .step p { font-size: 14px; color: var(--rnm-ink-soft); line-height: 1.5; margin: 0; }
+
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .why { padding: 28px; border: 3px solid var(--rnm-ink); border-radius: 20px; background: #fff; box-shadow: 4px 5px 0 var(--rnm-ink); }
+  .why h4 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 20px; margin: 0 0 10px; display: flex; gap: 10px; align-items: center; }
+  .why h4 svg { color: var(--rnm-orange); }
+  .why p { font-size: 15px; color: var(--rnm-ink-soft); line-height: 1.55; margin: 0; }
+</style>
+</head>
+<body data-screen-label="Services">
+
+<header class="rnm-header">
+  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Licensed &amp; Insured</div></div></a>
+  <nav class="rnm-nav">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="svc-dropdown">
+      <a href="services.html" id="svc-trigger">Services &#9662;</a>
+      <div class="dropdown-panel" id="svc-panel" style="display:none">
+        <div class="dropdown-panel-inner">
+          <a href="roofing.html">Roof Replacement</a>
+          <a href="siding.html">Energy-Efficient Siding</a>
+          <a href="windows.html">Energy-Efficient Windows</a>
+          <a href="gutters.html">Gutter Installation</a>
+        </div>
+      </div>
+    </div>
+    <a href="about-us.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="rnm-header-cta">
+    <a class="phone" href="tel:8329910928">832-991-0928</a>
+    <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  </div>
+</header>
+<script>
+(function(){
+  var dd = document.getElementById('svc-dropdown');
+  var panel = document.getElementById('svc-panel');
+  var timer;
+  function show(){ clearTimeout(timer); panel.style.display = 'block'; }
+  function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
+  dd.addEventListener('mouseenter', show);
+  dd.addEventListener('mouseleave', hide);
+  panel.addEventListener('mouseenter', show);
+  panel.addEventListener('mouseleave', hide);
+})();
+</script>
+
+<section class="rnm-page-hero">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Everything we do</div>
+    <h1>Four services.<br/>One crew that owns it.</h1>
+    <p class="lead">Roofs, siding, windows, gutters — the whole exterior. When one crew handles all of it, the flashings line up, the warranties stack, and nothing gets blamed on "the other guys."</p>
+  </div>
+</section>
+
+<section class="rnm-section cream">
+  <div class="wrap">
+    <div class="svc-grid">
+      <a href="roofing.html" class="svc-card">
+        <div class="cover cover-roof"><div class="tag">Most requested</div></div>
+        <div class="body">
+          <h3>Roof Replacement</h3>
+          <p>Full tear-offs, asphalt &amp; metal, impact-resistant shingles, insurance claim help for storm damage.</p>
+          <ul class="bullets">
+            <li>10-year workmanship warranty + up to 50-year material warranty</li>
+            <li>Owens Corning Platinum + GAF Master Elite certified</li>
+            <li>Most roofs done in 1–2 days</li>
+          </ul>
+          <span class="arrow">Roof details →</span>
+        </div>
+      </a>
+      <a href="siding.html" class="svc-card">
+        <div class="cover cover-siding"><div class="tag">Energy rebate eligible</div></div>
+        <div class="body">
+          <h3>Energy Siding</h3>
+          <p>James Hardie fiber-cement, insulated vinyl, and engineered wood. Cuts summer cooling bills by 15–25%.</p>
+          <ul class="bullets">
+            <li>R-value boost from insulated backer board</li>
+            <li>30-year manufacturer warranty (Hardie)</li>
+            <li>Hurricane-rated impact backing available</li>
+          </ul>
+          <span class="arrow">Siding details →</span>
+        </div>
+      </a>
+      <a href="windows.html" class="svc-card">
+        <div class="cover cover-windows"><div class="tag">ENERGY STAR partner</div></div>
+        <div class="body">
+          <h3>Energy Windows</h3>
+          <p>Double-pane Low-E, argon-filled, impact-rated options. Replace one window or the whole house.</p>
+          <ul class="bullets">
+            <li>Pella, Andersen, Simonton — we'll explain the real differences</li>
+            <li>Lifetime frame + 20-year glass seal warranty</li>
+            <li>Federal 30% tax credit help included</li>
+          </ul>
+          <span class="arrow">Windows details →</span>
+        </div>
+      </a>
+      <a href="gutters.html" class="svc-card">
+        <div class="cover cover-gutters"><div class="tag">Fastest turnaround</div></div>
+        <div class="body">
+          <h3>Seamless Gutters</h3>
+          <p>5" and 6" aluminum or steel, cut on-site to exact length. Guards and downspout extensions included.</p>
+          <ul class="bullets">
+            <li>No seams to leak at joints</li>
+            <li>32 baked-enamel colors to match your trim</li>
+            <li>Most houses done in one day</li>
+          </ul>
+          <span class="arrow">Gutters details →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="rnm-section sky">
+  <div class="wrap">
+    <div class="rnm-eyebrow">How we work</div>
+    <h2>From "got a leak" to "looks better than new."</h2>
+    <p class="lead">Same process whether you need one patch or a full exterior redo. No upsells, no games.</p>
+    <div class="how" style="margin-top:36px;">
+      <div class="step"><div class="n">1</div><h3>Get an estimate</h3><p>90-second AI quote online, or schedule a free in-person inspection. Whichever you prefer.</p></div>
+      <div class="step"><div class="n">2</div><h3>Pick your materials</h3><p>We bring samples. You pick the shingle, the siding color, the window brand. No pressure.</p></div>
+      <div class="step"><div class="n">3</div><h3>We get to work</h3><p>Crew shows up on the agreed day. Tarp your landscaping. Sweep for nails twice.</p></div>
+      <div class="step"><div class="n">4</div><h3>Final walkthrough</h3><p>You walk the job with the foreman before we pack up. Nothing gets missed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="rnm-section white">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Why hire us</div>
+    <h2>Three things other contractors won't give you.</h2>
+    <div class="why-grid" style="margin-top:36px;">
+      <div class="why">
+        <h4><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> A real timeline</h4>
+        <p>We tell you exactly which day the crew starts, how long it'll take, and when we'll be done. Then we hit it — or call you the second we know we can't.</p>
+      </div>
+      <div class="why">
+        <h4><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg> A fixed price</h4>
+        <p>Written estimate is final. No "we opened up the wall and found..." surprise invoices. If we hit real issues, we show you first and you decide.</p>
+      </div>
+      <div class="why">
+        <h4><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> A number that picks up</h4>
+        <p>Post-job questions? Leak in three years? You call the same number and get Dale or Rosa. Not a call center, not an "AI assistant."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-cta">
+  <div class="wrap">
+    <img src="assets/logo-mascot.png" alt="" class="mascot"/>
+    <h2>Start with a free estimate.</h2>
+    <p>Upload a photo of your roof or tell us your address — we'll send a real number in 90 seconds.</p>
+    <div class="actions">
+      <a href="../estimate-flow/index.html" class="rnm-btn ink lg">Get my free estimate</a>
+      <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rnm-footer">
+  <div class="wrap">
+    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew.</p></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roof Replacement</a></li><li><a href="siding.html">Energy Siding</a></li><li><a href="windows.html">Energy Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>Kemah, TX 77565</li><li>Mon–Sat, 7a–7p</li></ul></div>
+  </div>
+  <div class="bottom"><div>© 2026 Roofs-N-More LLC · Licensed &amp; insured</div><div>Made with hammers in Kemah, TX.</div></div>
+</footer>
+
+</body>
+</html>

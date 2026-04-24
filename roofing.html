@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roof Replacement — Roofs-N-More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="service-page.css">
+<style>
+  .roof-visual { background: linear-gradient(to bottom, var(--rnm-blue-soft) 55%, #FFE4C4 55%); }
+  .roof-visual::before {
+    content: ""; position: absolute; left: 50%; top: 20%; transform: translateX(-50%);
+    width: 0; height: 0; border-left: 220px solid transparent; border-right: 220px solid transparent;
+    border-bottom: 140px solid var(--rnm-orange);
+    filter: drop-shadow(5px 6px 0 var(--rnm-ink));
+  }
+  .roof-visual::after {
+    content: ""; position: absolute; left: 50%; top: calc(20% + 140px); transform: translateX(-50%);
+    width: 340px; height: 70px; background: var(--rnm-blue); border: 3.5px solid var(--rnm-ink);
+    box-shadow: 5px 6px 0 var(--rnm-ink);
+  }
+</style>
+</head>
+<body data-screen-label="Roofing">
+
+<header class="rnm-header">
+  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Licensed &amp; Insured</div></div></a>
+  <nav class="rnm-nav">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="svc-dropdown">
+      <a href="services.html" id="svc-trigger">Services &#9662;</a>
+      <div class="dropdown-panel" id="svc-panel" style="display:none">
+        <div class="dropdown-panel-inner">
+          <a href="roofing.html">Roof Replacement</a>
+          <a href="siding.html">Energy-Efficient Siding</a>
+          <a href="windows.html">Energy-Efficient Windows</a>
+          <a href="gutters.html">Gutter Installation</a>
+        </div>
+      </div>
+    </div>
+    <a href="about-us.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="rnm-header-cta">
+    <a class="phone" href="tel:8329910928">832-991-0928</a>
+    <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  </div>
+</header>
+<script>
+(function(){
+  var dd = document.getElementById('svc-dropdown');
+  var panel = document.getElementById('svc-panel');
+  var timer;
+  function show(){ clearTimeout(timer); panel.style.display = 'block'; }
+  function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
+  dd.addEventListener('mouseenter', show);
+  dd.addEventListener('mouseleave', hide);
+  panel.addEventListener('mouseenter', show);
+  panel.addEventListener('mouseleave', hide);
+})();
+</script>
+
+<section class="svc-hero">
+  <div class="wrap">
+    <div>
+      <div class="rnm-eyebrow">Roof replacement</div>
+      <h1>New roofs done right — on time &amp; on budget.</h1>
+      <p class="lead">Residential roof replacement throughout greater Houston. We've installed 850+ roofs and we know what Gulf Coast weather does to them — hurricane-force winds, hail storms, relentless heat cycles and all.</p>
+      <div class="actions">
+        <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn lg">Free AI instant estimate</a>
+        <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+      </div>
+      <div class="proof">
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> GAF Certified</div>
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Fully licensed &amp; insured</div>
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Insurance claim help</div>
+      </div>
+    </div>
+    <div class="visual roof-visual"></div>
+  </div>
+</section>
+
+<section class="rnm-section white">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Materials we install</div>
+    <h2>Four material options. We'll explain the real trade-offs.</h2>
+    <div class="spec-grid">
+      <div class="spec">
+        <h4>Architectural shingles (30-yr)</h4>
+        <p>The workhorse of Houston roofs. 30-year life, strong wind rating, dozens of colors. Factory-certified with enhanced warranty up to lifetime.</p>
+        <ul><li>GAF Timberline HDZ</li><li>CertainTeed Landmark</li><li>Most popular choice</li></ul>
+      </div>
+      <div class="spec">
+        <h4>Impact-resistant Class 4</h4>
+        <p>Qualifies for 15–30% insurance discounts in most Houston zip codes. Hail and debris rated for Gulf Coast weather.</p>
+        <ul><li>Class 4 UL 2218 certified</li><li>15–30% insurance discount</li><li>Best value long-term</li></ul>
+      </div>
+      <div class="spec">
+        <h4>Designer &amp; premium shingles</h4>
+        <p>Shake, slate, and laminate profiles that give your home a high-end look without the high-end maintenance.</p>
+        <ul><li>GAF Camelot II</li><li>CertainTeed Presidential</li><li>50-year material warranty</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-section sky">
+  <div class="wrap">
+    <div class="rnm-eyebrow">How a re-roof goes</div>
+    <h2>Six steps from estimate to warranty delivery.</h2>
+    <div class="process-list">
+      <div class="process-item"><div class="n">1</div><div><h4>Free AI estimate</h4><p>Get a real price range in 90 seconds at quote.roofsnmore.com — no appointment needed to start.</p></div></div>
+      <div class="process-item"><div class="n">2</div><div><h4>Inspection &amp; contract</h4><p>We climb the roof, measure, note any damage, and send a fixed-price written contract within 48 hours.</p></div></div>
+      <div class="process-item"><div class="n">3</div><div><h4>Tear-off &amp; prep</h4><p>Dumpster arrives early. Crew strips old shingles, inspects decking, replaces any rotten wood. All hauled off that day.</p></div></div>
+      <div class="process-item"><div class="n">4</div><div><h4>Installation day</h4><p>New underlayment, ice &amp; water shield at eaves, starter strips, shingles, ridge vents, flashings. Magnetic sweep for nails.</p></div></div>
+      <div class="process-item"><div class="n">5</div><div><h4>Quality inspection</h4><p>We walk every square foot before we pack up. You walk it with us. Photos sent to your email that night.</p></div></div>
+      <div class="process-item"><div class="n">6</div><div><h4>Cleanup &amp; warranty delivery</h4><p>We register your GAF manufacturer warranty and deliver your workmanship warranty paperwork before we leave.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-section white">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Ballpark pricing</div>
+    <h2>What a new roof actually costs in Houston.</h2>
+    <p class="lead">Most residential replacements run $10,000–$18,000 depending on size, pitch, material, and decking repairs. Every quote is free and written — these are just ballparks to set expectations.</p>
+    <div class="pricing-table">
+      <div class="tier">
+        <div class="name">Architectural shingles</div>
+        <div class="blurb">2,000–3,500 sq ft home</div>
+        <div class="price">$10–14k</div>
+        <div class="price-suffix">turnkey, tear-off included</div>
+        <ul>
+          <li>30-year architectural shingle</li>
+          <li>Synthetic underlayment</li>
+          <li>Ridge vents + pipe boots</li>
+          <li>GAF enhanced warranty</li>
+        </ul>
+        <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn ghost">Get exact price</a>
+      </div>
+      <div class="tier popular">
+        <div class="name">Impact-resistant Class 4</div>
+        <div class="blurb">Same home, hail-rated shingle</div>
+        <div class="price">$13–18k</div>
+        <div class="price-suffix">15–30% insurance discount</div>
+        <ul>
+          <li>Class 4 UL 2218 rated shingle</li>
+          <li>Ice &amp; water shield at eaves</li>
+          <li>Factory-certified warranty up to lifetime</li>
+          <li>Insurance discount paperwork included</li>
+        </ul>
+        <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn">Get exact price</a>
+      </div>
+      <div class="tier">
+        <div class="name">Designer &amp; premium</div>
+        <div class="blurb">Shake, slate, or laminate look</div>
+        <div class="price">$16–24k</div>
+        <div class="price-suffix">best curb appeal &amp; resale</div>
+        <ul>
+          <li>GAF Camelot II or equivalent</li>
+          <li>Dimensional shadow lines</li>
+          <li>50-year material warranty</li>
+          <li>GAF enhanced warranty eligible</li>
+        </ul>
+        <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn ghost">Get exact price</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-section sky">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Common questions</div>
+    <h2>Stuff people ask about roofs.</h2>
+    <div class="faq">
+      <details open>
+        <summary>How long does a roof replacement take?</summary>
+        <p>Most residential replacements (2,000–3,500 sq ft) are completed in one full day. Larger or steeper roofs may take two days. We always give you an exact timeline in writing before we start.</p>
+      </details>
+      <details>
+        <summary>What does a roof replacement cost?</summary>
+        <p>Most Houston homes run $10,000–$18,000 depending on size, pitch, material choice, and any decking repairs needed. Get a free AI estimate at quote.roofsnmore.com in under a minute — no appointment needed.</p>
+      </details>
+      <details>
+        <summary>Will my insurance cover a new roof?</summary>
+        <p>If your roof has hail or wind damage from a named storm, usually yes. We'll do a free inspection, document the damage, and walk you through the claim with your adjuster. We're experienced with Texas insurance claims and can help you through the whole process.</p>
+      </details>
+      <details>
+        <summary>What warranty do I get?</summary>
+        <p>As a GAF Certified contractor, we can offer factory-certified enhanced warranties up to lifetime coverage on qualifying shingles. We'll explain exactly what warranty applies to your project before you sign anything.</p>
+      </details>
+      <details>
+        <summary>When should I replace instead of repair?</summary>
+        <p>If your roof is over 20 years old, has widespread damage, or shows active leaks in the attic, replacement is usually the smarter call. Under 15 years with isolated damage? A repair is probably fine. We'll tell you honestly which one fits your situation.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-cta">
+  <div class="wrap">
+    <img src="assets/logo-mascot.png" alt="" class="mascot"/>
+    <h2>Ready for a real number on your roof?</h2>
+    <p>Get a free AI instant estimate in 90 seconds — or call Phil directly. No pressure either way.</p>
+    <div class="actions">
+      <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn ink lg">Free AI instant estimate</a>
+      <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rnm-footer">
+  <div class="wrap">
+    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew.</p></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roof Replacement</a></li><li><a href="siding.html">Energy Siding</a></li><li><a href="windows.html">Energy Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>437 Holly Branch Ln</li><li>Kemah, TX 77565</li><li>Mon–Fri 8am–6pm</li><li>Sat 9am–3pm</li></ul></div>
+  </div>
+  <div class="bottom"><div>© 2026 Roofs-N-More LLC · Licensed &amp; insured</div><div>Made with hammers in Kemah, TX.</div></div>
+</footer>
+
+</body>
+</html>

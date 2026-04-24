@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portfolio — Roofs-N-More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
+  .filter-chip {
+    padding: 10px 18px; border-radius: 999px; border: 2.5px solid var(--rnm-ink);
+    background: #fff; font-family: var(--rnm-font-display); font-weight: 600; font-size: 15px;
+    cursor: pointer; box-shadow: 2px 3px 0 var(--rnm-ink); transition: all 140ms var(--rnm-ease-bounce);
+  }
+  .filter-chip:hover { transform: translate(-1px,-1px); box-shadow: 4px 5px 0 var(--rnm-ink); }
+  .filter-chip.active { background: var(--rnm-orange); color: #fff; }
+
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .project {
+    background: #fff; border: 3.5px solid var(--rnm-ink); border-radius: 22px;
+    box-shadow: 5px 6px 0 var(--rnm-ink); overflow: hidden;
+    transition: transform 180ms var(--rnm-ease-bounce);
+  }
+  .project:hover { transform: translate(-2px,-2px); box-shadow: 7px 9px 0 var(--rnm-ink); }
+  .project .cover { aspect-ratio: 4/3; border-bottom: 3px solid var(--rnm-ink); position: relative; }
+  .project .cover .tag {
+    position: absolute; top: 14px; left: 14px;
+    background: #fff; border: 2.5px solid var(--rnm-ink); padding: 5px 12px; border-radius: 999px;
+    font-family: var(--rnm-font-display); font-weight: 600; font-size: 12px;
+    box-shadow: 2px 2px 0 var(--rnm-ink);
+  }
+  .project .cover .ba {
+    position: absolute; bottom: 14px; right: 14px;
+    background: var(--rnm-orange); color: #fff;
+    border: 2.5px solid var(--rnm-ink); padding: 4px 10px; border-radius: 6px;
+    font-family: var(--rnm-font-hand); font-size: 22px; font-weight: 700;
+    transform: rotate(-4deg);
+    box-shadow: 2px 2px 0 var(--rnm-ink);
+  }
+  .project .body { padding: 22px 24px 26px; }
+  .project h3 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 22px; margin: 0 0 4px; }
+  .project .loc { font-size: 13px; color: var(--rnm-ink-mute); font-weight: 700; letter-spacing: 0.04em; }
+  .project p { font-size: 14px; color: var(--rnm-ink-soft); line-height: 1.55; margin: 10px 0 0; }
+  .project .meta { display: flex; gap: 14px; margin-top: 14px; padding-top: 14px; border-top: 2px solid var(--rnm-line); }
+  .project .meta span { font-size: 12px; color: var(--rnm-ink-mute); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* Covers */
+  .cv-roof-1 { background: linear-gradient(var(--rnm-blue-soft) 50%, #F5EBD8 50%); position: relative; }
+  .cv-roof-1::before { content: ""; position: absolute; left: 50%; top: 20%; transform: translateX(-50%); width: 0; height: 0; border-left: 140px solid transparent; border-right: 140px solid transparent; border-bottom: 90px solid var(--rnm-orange-dark); filter: drop-shadow(3px 4px 0 var(--rnm-ink)); }
+  .cv-roof-1::after { content: ""; position: absolute; left: 50%; top: calc(20% + 90px); transform: translateX(-50%); width: 220px; height: 50px; background: var(--rnm-sand); border: 3px solid var(--rnm-ink); }
+
+  .cv-roof-2 { background: linear-gradient(#FFE4C4 55%, var(--rnm-blue-soft) 55%); position: relative; }
+  .cv-roof-2::before { content: ""; position: absolute; left: 50%; top: 15%; transform: translateX(-50%); width: 0; height: 0; border-left: 150px solid transparent; border-right: 150px solid transparent; border-bottom: 110px solid #334155; filter: drop-shadow(3px 4px 0 var(--rnm-ink)); }
+  .cv-roof-2::after { content: ""; position: absolute; left: 50%; top: calc(15% + 110px); transform: translateX(-50%); width: 240px; height: 50px; background: var(--rnm-blue); border: 3px solid var(--rnm-ink); }
+
+  .cv-roof-3 { background: linear-gradient(#0F1A24 50%, var(--rnm-sand) 50%); position: relative; }
+  .cv-roof-3::before { content: ""; position: absolute; left: 50%; top: 25%; transform: translateX(-50%); width: 240px; height: 60px; background: repeating-linear-gradient(to right, #9CA3AF 0 14px, #6B7280 14px 16px); border: 3px solid var(--rnm-ink); transform-origin: left; transform: translateX(-50%) skew(-30deg); }
+
+  .cv-siding-1 { background: var(--rnm-cream); position: relative; }
+  .cv-siding-1::before { content: ""; position: absolute; inset: 24px; background: repeating-linear-gradient(to bottom, #4B5563 0 22px, #374151 22px 24px, #4B5563 24px 46px); border: 3px solid var(--rnm-ink); border-radius: 10px; }
+  .cv-siding-1::after { content: ""; position: absolute; top: 55px; left: 70px; width: 70px; height: 90px; background: var(--rnm-orange); border: 3px solid var(--rnm-ink); }
+
+  .cv-siding-2 { background: var(--rnm-sky); position: relative; }
+  .cv-siding-2::before { content: ""; position: absolute; inset: 24px; background: repeating-linear-gradient(to bottom, #F9FAFB 0 22px, #E5E7EB 22px 24px, #F9FAFB 24px 46px); border: 3px solid var(--rnm-ink); border-radius: 10px; }
+
+  .cv-win-1 { background: var(--rnm-blue-soft); position: relative; display: grid; place-items: center; }
+  .cv-win-1::before { content: ""; width: 60%; height: 65%; background: linear-gradient(var(--rnm-ink), var(--rnm-ink)) 50% 50%/4px 100%, linear-gradient(var(--rnm-ink), var(--rnm-ink)) 50% 50%/100% 4px, linear-gradient(135deg, #FFF 38%, var(--rnm-blue-soft) 60%); background-repeat: no-repeat; border: 4px solid var(--rnm-ink); border-radius: 6px; box-shadow: 4px 5px 0 var(--rnm-ink); }
+
+  .cv-win-2 { background: var(--rnm-orange-soft); position: relative; display: grid; place-items: center; }
+  .cv-win-2::before { content: ""; width: 70%; height: 60%; background: linear-gradient(var(--rnm-ink), var(--rnm-ink)) 33% 50%/3px 100%, linear-gradient(var(--rnm-ink), var(--rnm-ink)) 66% 50%/3px 100%, linear-gradient(var(--rnm-ink), var(--rnm-ink)) 50% 50%/100% 3px, linear-gradient(135deg, #FFF 38%, var(--rnm-blue-soft) 60%); background-repeat: no-repeat; border: 4px solid var(--rnm-ink); border-radius: 6px; box-shadow: 4px 5px 0 var(--rnm-ink); }
+
+  .cv-gut-1 { background: linear-gradient(var(--rnm-blue-soft) 55%, var(--rnm-sand) 55%); position: relative; }
+  .cv-gut-1::before { content: ""; position: absolute; left: 50%; top: 18%; transform: translateX(-50%); width: 0; height: 0; border-left: 150px solid transparent; border-right: 150px solid transparent; border-bottom: 90px solid #64748B; filter: drop-shadow(3px 4px 0 var(--rnm-ink)); }
+  .cv-gut-1::after { content: ""; position: absolute; top: calc(18% + 90px); left: 18%; right: 18%; height: 26px; background: var(--rnm-orange-dark); border: 3px solid var(--rnm-ink); border-radius: 0 0 12px 12px; }
+
+  .cv-gut-2 { background: var(--rnm-cream); position: relative; }
+  .cv-gut-2::before { content: ""; position: absolute; top: 30%; left: 10%; right: 10%; height: 24px; background: #FFF; border: 3px solid var(--rnm-ink); border-radius: 0 0 12px 12px; box-shadow: 4px 4px 0 var(--rnm-ink); }
+  .cv-gut-2::after { content: ""; position: absolute; top: calc(30% + 24px); right: 15%; width: 24px; bottom: 10%; background: #FFF; border: 3px solid var(--rnm-ink); }
+
+  .cv-full { background: linear-gradient(var(--rnm-blue-soft) 40%, var(--rnm-cream) 40%); position: relative; }
+  .cv-full::before { content: ""; position: absolute; left: 50%; top: 10%; transform: translateX(-50%); width: 0; height: 0; border-left: 160px solid transparent; border-right: 160px solid transparent; border-bottom: 100px solid var(--rnm-orange); filter: drop-shadow(3px 4px 0 var(--rnm-ink)); }
+  .cv-full::after { content: ""; position: absolute; top: calc(10% + 100px); left: 20%; right: 20%; bottom: 15%; background: repeating-linear-gradient(to bottom, var(--rnm-blue) 0 18px, var(--rnm-blue-dark) 18px 20px, var(--rnm-blue) 20px 38px); border: 3px solid var(--rnm-ink); border-radius: 6px 6px 0 0; }
+</style>
+</head>
+<body data-screen-label="Portfolio">
+
+<header class="rnm-header">
+  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Licensed &amp; Insured</div></div></a>
+  <nav class="rnm-nav">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="svc-dropdown">
+      <a href="services.html" id="svc-trigger">Services &#9662;</a>
+      <div class="dropdown-panel" id="svc-panel" style="display:none">
+        <div class="dropdown-panel-inner">
+          <a href="roofing.html">Roof Replacement</a>
+          <a href="siding.html">Energy-Efficient Siding</a>
+          <a href="windows.html">Energy-Efficient Windows</a>
+          <a href="gutters.html">Gutter Installation</a>
+        </div>
+      </div>
+    </div>
+    <a href="about-us.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="rnm-header-cta">
+    <a class="phone" href="tel:8329910928">832-991-0928</a>
+    <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  </div>
+</header>
+<script>
+(function(){
+  var dd = document.getElementById('svc-dropdown');
+  var panel = document.getElementById('svc-panel');
+  var timer;
+  function show(){ clearTimeout(timer); panel.style.display = 'block'; }
+  function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
+  dd.addEventListener('mouseenter', show);
+  dd.addEventListener('mouseleave', hide);
+  panel.addEventListener('mouseenter', show);
+  panel.addEventListener('mouseleave', hide);
+})();
+</script>
+
+<section class="rnm-page-hero">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Recent work</div>
+    <h1>Real houses.<br/>Real neighbors. Real proof.</h1>
+    <p class="lead">Every home below was a project from the last 18 months. Click any card to see before/after shots, materials, timeline, and what the customer had to say.</p>
+  </div>
+</section>
+
+<section class="rnm-section cream">
+  <div class="wrap">
+    <div class="filters">
+      <button class="filter-chip active" data-cat="all">All projects · 12</button>
+      <button class="filter-chip" data-cat="roof">Roofs · 5</button>
+      <button class="filter-chip" data-cat="siding">Siding · 2</button>
+      <button class="filter-chip" data-cat="windows">Windows · 2</button>
+      <button class="filter-chip" data-cat="gutters">Gutters · 2</button>
+      <button class="filter-chip" data-cat="full">Full exterior · 1</button>
+    </div>
+
+    <div class="gallery">
+      <div class="project" data-cat="roof">
+        <div class="cover cv-roof-1"><div class="tag">Roof</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>Johnson family · Pearland</h3>
+          <div class="loc">GAF Timberline HDZ · 2,400 sqft</div>
+          <p>Insurance-covered hail replacement. Tear-off to final walk in 32 hours. New ridge vents cut attic temp 18°F.</p>
+          <div class="meta"><span>Aug 2025</span><span>2 days</span><span>$14,200</span></div>
+        </div>
+      </div>
+      <div class="project" data-cat="roof">
+        <div class="cover cv-roof-2"><div class="tag">Metal roof</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>Patel residence · Sugar Land</h3>
+          <div class="loc">Standing-seam Galvalume · Aegean Blue</div>
+          <p>First metal roof on their street. 50-year Kynar finish, hidden fasteners, ridge-to-eave install on a steep 10:12 pitch.</p>
+          <div class="meta"><span>Mar 2025</span><span>4 days</span><span>$28,900</span></div>
+        </div>
+      </div>
+      <div class="project" data-cat="roof">
+        <div class="cover cv-roof-3"><div class="tag">Impact roof</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>Reyes family · Clear Lake</h3>
+          <div class="loc">Owens Corning Duration Storm · Class 4</div>
+          <p>Post-hail total loss. We handled the claim end-to-end. Class 4 upgrade got them 22% off their premium.</p>
+          <div class="meta"><span>Jun 2025</span><span>1 day</span><span>$16,750</span></div>
+        </div>
+      </div>
+
+      <div class="project" data-cat="siding">
+        <div class="cover cv-siding-1"><div class="tag">Hardie</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>McKinley house · Friendswood</h3>
+          <div class="loc">James Hardie ColorPlus · Iron Gray</div>
+          <p>Full tear-off of 1998 masonite. Hardie HZ10 with R-5 continuous foam. August AC bill dropped $87.</p>
+          <div class="meta"><span>Apr 2025</span><span>7 days</span><span>$38,400</span></div>
+        </div>
+      </div>
+      <div class="project" data-cat="siding">
+        <div class="cover cv-siding-2"><div class="tag">LP SmartSide</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>Nguyen family · League City</h3>
+          <div class="loc">LP ExpertFinish · Arctic White</div>
+          <p>Bungalow restoration. Kept original trim details, pre-finished siding meant no onsite painting.</p>
+          <div class="meta"><span>Feb 2025</span><span>5 days</span><span>$26,800</span></div>
+        </div>
+      </div>
+
+      <div class="project" data-cat="windows">
+        <div class="cover cv-win-1"><div class="tag">Windows</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>Okonkwo house · Kemah</h3>
+          <div class="loc">Pella 250 Series · 14 windows</div>
+          <p>1970s single-pane to modern double-pane Low-E. Living room dropped from 83°F to 76°F on afternoon cook-days.</p>
+          <div class="meta"><span>Jul 2025</span><span>2 days</span><span>$18,900</span></div>
+        </div>
+      </div>
+      <div class="project" data-cat="windows">
+        <div class="cover cv-win-2"><div class="tag">Windows</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>Rodriguez residence · Seabrook</h3>
+          <div class="loc">Andersen 100 Series · 18 windows</div>
+          <p>Coastal home. Fibrex composite frames, impact-rated glass for Windstorm code compliance.</p>
+          <div class="meta"><span>May 2025</span><span>3 days</span><span>$32,100</span></div>
+        </div>
+      </div>
+
+      <div class="project" data-cat="gutters">
+        <div class="cover cv-gut-1"><div class="tag">Gutters</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>Baker family · League City</h3>
+          <div class="loc">6" seamless aluminum · micro-mesh guards</div>
+          <p>200 ft of gutter around a two-story. Old seamed gutters were overflowing every storm. Done in one day.</p>
+          <div class="meta"><span>Sep 2025</span><span>1 day</span><span>$3,450</span></div>
+        </div>
+      </div>
+      <div class="project" data-cat="gutters">
+        <div class="cover cv-gut-2"><div class="tag">Gutters + fascia</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>Thornton house · Dickinson</h3>
+          <div class="loc">5" seamless + 24 ft fascia</div>
+          <p>Rotted fascia had caused water behind siding. Replaced fascia, new seamless aluminum, downspouts relocated.</p>
+          <div class="meta"><span>Oct 2025</span><span>2 days</span><span>$2,900</span></div>
+        </div>
+      </div>
+
+      <div class="project" data-cat="roof">
+        <div class="cover cv-roof-1"><div class="tag">Roof</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>Williams family · Pasadena</h3>
+          <div class="loc">CertainTeed Landmark · Max Def Driftwood</div>
+          <p>Storm damage to one section, decided to do the whole roof. Color change from dated brown to modern gray.</p>
+          <div class="meta"><span>Nov 2025</span><span>2 days</span><span>$13,800</span></div>
+        </div>
+      </div>
+      <div class="project" data-cat="roof">
+        <div class="cover cv-roof-2"><div class="tag">Roof</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>Martinez residence · Alvin</h3>
+          <div class="loc">GAF Timberline UHDZ · Charcoal</div>
+          <p>Big 3,400 sqft roof, complex valleys, two skylights. Replaced all flashings, added attic ventilation.</p>
+          <div class="meta"><span>Dec 2025</span><span>3 days</span><span>$22,400</span></div>
+        </div>
+      </div>
+
+      <div class="project" data-cat="full">
+        <div class="cover cv-full"><div class="tag">Whole exterior</div><div class="ba">Before → After</div></div>
+        <div class="body">
+          <h3>The Cho family · Webster</h3>
+          <div class="loc">Roof + Hardie + 16 windows + gutters</div>
+          <p>3-week full exterior transformation. One crew, one schedule, one warranty. Their energy bill is 28% lower.</p>
+          <div class="meta"><span>Jan 2026</span><span>19 days</span><span>$78,500</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-section sky">
+  <div class="wrap" style="text-align:center;">
+    <div class="rnm-eyebrow">What they said</div>
+    <h2 style="margin: 0 auto 20px; text-align:center;">"They called me back. Every. Single. Time."</h2>
+    <p class="lead" style="margin: 0 auto 16px; text-align:center;">
+      — Cheryl Baker, League City · gutters installed September 2025
+    </p>
+    <a href="../estimate-flow/index.html" class="rnm-btn lg">Get your own before/after</a>
+  </div>
+</section>
+
+<section class="rnm-cta">
+  <div class="wrap">
+    <img src="assets/logo-mascot.png" alt="" class="mascot"/>
+    <h2>Put your house on this page next.</h2>
+    <p>Every project above started with a free estimate. Yours can too.</p>
+    <div class="actions">
+      <a href="../estimate-flow/index.html" class="rnm-btn ink lg">Start my free estimate</a>
+      <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rnm-footer">
+  <div class="wrap">
+    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew.</p></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roof Replacement</a></li><li><a href="siding.html">Energy Siding</a></li><li><a href="windows.html">Energy Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>Kemah, TX 77565</li><li>Mon–Sat, 7a–7p</li></ul></div>
+  </div>
+  <div class="bottom"><div>© 2026 Roofs-N-More LLC · Licensed &amp; insured</div><div>Made with hammers in Kemah, TX.</div></div>
+</footer>
+
+<script>
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const cat = chip.dataset.cat;
+      document.querySelectorAll('.project').forEach(p => {
+        p.style.display = (cat === 'all' || p.dataset.cat === cat) ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

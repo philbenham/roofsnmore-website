@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Seamless Gutters — Roofs-N-More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="service-page.css">
+<style>
+  .gut-visual { background: linear-gradient(var(--rnm-blue-soft) 55%, #FFF8EE 55%); position: relative; overflow: hidden; }
+  .gut-visual::before {
+    content: ""; position: absolute; left: 50%; top: 18%; transform: translateX(-50%);
+    width: 0; height: 0; border-left: 190px solid transparent; border-right: 190px solid transparent;
+    border-bottom: 110px solid var(--rnm-orange-dark);
+    filter: drop-shadow(4px 5px 0 var(--rnm-ink));
+  }
+  .gut-visual::after {
+    content: ""; position: absolute; top: calc(18% + 110px); left: 15%; right: 15%; height: 32px;
+    background: var(--rnm-orange); border: 3.5px solid var(--rnm-ink); border-radius: 0 0 16px 16px;
+    box-shadow: 5px 6px 0 var(--rnm-ink);
+  }
+</style>
+</head>
+<body data-screen-label="Gutters">
+
+<header class="rnm-header">
+  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Licensed &amp; Insured</div></div></a>
+  <nav class="rnm-nav">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="svc-dropdown">
+      <a href="services.html" id="svc-trigger">Services &#9662;</a>
+      <div class="dropdown-panel" id="svc-panel" style="display:none">
+        <div class="dropdown-panel-inner">
+          <a href="roofing.html">Roof Replacement</a>
+          <a href="siding.html">Energy-Efficient Siding</a>
+          <a href="windows.html">Energy-Efficient Windows</a>
+          <a href="gutters.html">Gutter Installation</a>
+        </div>
+      </div>
+    </div>
+    <a href="about-us.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="rnm-header-cta">
+    <a class="phone" href="tel:8329910928">832-991-0928</a>
+    <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  </div>
+</header>
+<script>
+(function(){
+  var dd = document.getElementById('svc-dropdown');
+  var panel = document.getElementById('svc-panel');
+  var timer;
+  function show(){ clearTimeout(timer); panel.style.display = 'block'; }
+  function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
+  dd.addEventListener('mouseenter', show);
+  dd.addEventListener('mouseleave', hide);
+  panel.addEventListener('mouseenter', show);
+  panel.addEventListener('mouseleave', hide);
+})();
+</script>
+
+<section class="svc-hero">
+  <div class="wrap">
+    <div>
+      <div class="rnm-eyebrow">Seamless gutters</div>
+      <h1>Seamless gutter installation in Houston, TX.</h1>
+      <p class="lead">Houston gets 52 inches of rain per year — nearly twice the national average. Every run cut to exact length from a single coil on-site. Zero seam joints except at corners and downspout outlets.</p>
+      <div class="actions">
+        <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn lg">Free AI instant estimate</a>
+        <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+      </div>
+      <div class="proof">
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 25+ colors available</div>
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Most homes done same day</div>
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Micro-mesh guards available</div>
+      </div>
+    </div>
+    <div class="visual gut-visual"></div>
+  </div>
+</section>
+
+<section class="rnm-section white">
+  <div class="wrap">
+    <div class="rnm-eyebrow">What we install</div>
+    <h2>Two sizes. Three metals. Thirty-two colors.</h2>
+    <div class="spec-grid">
+      <div class="spec">
+        <h4>5-inch K-style aluminum</h4>
+        <p>Standard for most Houston homes. Moves plenty of water for single-story roofs.</p>
+        <ul><li>.027 or .032 gauge aluminum</li><li>Hidden hangers (no spikes)</li><li>Baked-on Kynar finish</li></ul>
+      </div>
+      <div class="spec">
+        <h4>6-inch K-style aluminum</h4>
+        <p>For bigger roofs, two-stories, or areas with heavy rain. Holds ~40% more water.</p>
+        <ul><li>.032 gauge aluminum</li><li>3×4 downspouts (vs 2×3)</li><li>Same 32 color options</li></ul>
+      </div>
+      <div class="spec">
+        <h4>Half-round copper / steel</h4>
+        <p>Upgrade pick for traditional and craftsman homes. Ages into a beautiful patina.</p>
+        <ul><li>16-oz copper or galvanized steel</li><li>Soldered joints</li><li>Custom brackets</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-section sky">
+  <div class="wrap">
+    <div class="rnm-eyebrow">How gutter install works</div>
+    <h2>Start at 8am. Done by dark.</h2>
+    <div class="process-list">
+      <div class="process-item"><div class="n">1</div><div><h4>Measure &amp; quote</h4><p>We measure every roofline, count corners and downspouts, and send a written price in 24 hours.</p></div></div>
+      <div class="process-item"><div class="n">2</div><div><h4>Pick color &amp; size</h4><p>Samples come to your house. Most people match the trim or the fascia. 5" or 6" depends on roof area.</p></div></div>
+      <div class="process-item"><div class="n">3</div><div><h4>Tear off old gutters</h4><p>Old gutters and downspouts come off. We inspect fascia for rot (usually some) and replace as needed.</p></div></div>
+      <div class="process-item"><div class="n">4</div><div><h4>Roll-form &amp; hang</h4><p>Truck-mounted roll-former cuts each run to exact length. Hidden hangers every 24 inches. Sealed corners.</p></div></div>
+      <div class="process-item"><div class="n">5</div><div><h4>Downspouts, guards, splash blocks</h4><p>Downspouts routed to drain away from foundation. Micro-mesh leaf guards installed. Concrete splash blocks set.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-section white">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Ballpark pricing</div>
+    <h2>What new gutters cost in Houston.</h2>
+    <p class="lead">Gutters run $8–$16 per linear foot installed, depending on size, metal, and guard type. A typical single-story home has ~170 ft of gutter.</p>
+    <div class="pricing-table">
+      <div class="tier">
+        <div class="name">5" aluminum, no guards</div>
+        <div class="blurb">170 ft, 4 downspouts</div>
+        <div class="price">$1,500–2,100</div>
+        <div class="price-suffix">same-day install</div>
+        <ul><li>.027 aluminum</li><li>32 color options</li><li>Hidden hangers</li><li>5-year workmanship warranty</li></ul>
+        <a href="../estimate-flow/index.html" class="rnm-btn ghost">Get exact price</a>
+      </div>
+      <div class="tier popular">
+        <div class="name">6" aluminum + guards</div>
+        <div class="blurb">Same home, micro-mesh guards</div>
+        <div class="price">$2,800–3,800</div>
+        <div class="price-suffix">most popular combo</div>
+        <ul><li>.032 aluminum, 3×4 downspouts</li><li>LeafFilter-style micro-mesh</li><li>Holds 40% more water</li><li>10-year workmanship warranty</li></ul>
+        <a href="../estimate-flow/index.html" class="rnm-btn">Get exact price</a>
+      </div>
+      <div class="tier">
+        <div class="name">Half-round copper</div>
+        <div class="blurb">Premium pick, same home</div>
+        <div class="price">$7,500–10,000</div>
+        <div class="price-suffix">lifetime metal</div>
+        <ul><li>16-oz copper</li><li>Soldered joints</li><li>Custom brackets</li><li>Lifetime metal warranty</li></ul>
+        <a href="../estimate-flow/index.html" class="rnm-btn ghost">Get exact price</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-section sky">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Common questions</div>
+    <h2>Gutter questions we get every spring.</h2>
+    <div class="faq">
+      <details open>
+        <summary>5-inch or 6-inch — which do I need?</summary>
+        <p>5-inch is standard for most Houston homes. Go 6-inch if your home is over 2,500 sq ft or has a steep pitch — it holds about 40% more water. We'll tell you exactly what your roof needs when we measure.</p>
+      </details>
+      <details>
+        <summary>What does gutter installation cost?</summary>
+        <p>Most Houston homes run $1,500–$3,500 depending on linear footage, size, and whether you add guards. Aluminum lasts 20–30 years; copper systems last 50+ years. We give you a written price before we start.</p>
+      </details>
+      <details>
+        <summary>Are micro-mesh guards worth it in Houston?</summary>
+        <p>Yes — especially in tree-dense neighborhoods. Stainless steel micro-mesh guards keep oak leaves, pine needles, and debris out while letting Houston's heavy rain flow through freely. They pay for themselves in avoided cleanings within a few years.</p>
+      </details>
+      <details>
+        <summary>Why do gutters matter so much in Houston?</summary>
+        <p>At 52 inches of rain per year, every drop that doesn't drain away properly finds its own path — usually straight at your foundation. Houston's clay soil expands and contracts dramatically with moisture, making proper drainage critical to protecting your slab.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-cta">
+  <div class="wrap">
+    <img src="assets/logo-mascot.png" alt="" class="mascot"/>
+    <h2>Stop climbing the ladder in October.</h2>
+    <p>Seamless gutters + guards, installed in a day. Get your free AI instant estimate now.</p>
+    <div class="actions">
+      <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn ink lg">Free AI instant estimate</a>
+      <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rnm-footer">
+  <div class="wrap">
+    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew.</p></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roof Replacement</a></li><li><a href="siding.html">Energy Siding</a></li><li><a href="windows.html">Energy Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>437 Holly Branch Ln</li><li>Kemah, TX 77565</li><li>Mon–Fri 8am–6pm</li><li>Sat 9am–3pm</li></ul></div>
+  </div>
+  <div class="bottom"><div>© 2026 Roofs-N-More LLC · Licensed &amp; insured</div><div>Made with hammers in Kemah, TX.</div></div>
+</footer>
+
+</body>
+</html>

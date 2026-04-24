@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Blog — Roofs-N-More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .featured {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center;
+    background: #fff; border: 3.5px solid var(--rnm-ink); border-radius: 28px;
+    box-shadow: 6px 8px 0 var(--rnm-ink); padding: 32px; margin-bottom: 56px;
+  }
+  .featured .cover { aspect-ratio: 5/4; border: 3px solid var(--rnm-ink); border-radius: 20px; background: linear-gradient(var(--rnm-blue-soft) 50%, var(--rnm-orange-soft) 50%); position: relative; }
+  .featured .cover::before { content: ""; position: absolute; left: 50%; top: 20%; transform: translateX(-50%); width: 0; height: 0; border-left: 120px solid transparent; border-right: 120px solid transparent; border-bottom: 80px solid var(--rnm-orange); filter: drop-shadow(3px 4px 0 var(--rnm-ink)); }
+  .featured .cover::after { content: "Featured"; position: absolute; top: 18px; left: 18px; background: var(--rnm-ink); color: #fff; padding: 6px 14px; border-radius: 999px; font-family: var(--rnm-font-display); font-weight: 600; font-size: 13px; }
+  .featured .tag { display: inline-block; background: var(--rnm-orange-soft); border: 2.5px solid var(--rnm-ink); padding: 4px 12px; border-radius: 999px; font-family: var(--rnm-font-display); font-weight: 600; font-size: 13px; margin-bottom: 12px; }
+  .featured h2 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 40px; line-height: 1.08; margin: 0 0 14px; letter-spacing: -0.01em; }
+  .featured p { font-size: 17px; color: var(--rnm-ink-soft); line-height: 1.55; margin: 0 0 20px; }
+  .byline { display: flex; gap: 14px; align-items: center; font-size: 14px; color: var(--rnm-ink-mute); font-weight: 700; }
+  .byline .avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--rnm-orange); border: 2.5px solid var(--rnm-ink); display: grid; place-items: center; color: #fff; font-family: var(--rnm-font-display); font-weight: 700; font-size: 14px; }
+
+  .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .post { background: #fff; border: 3px solid var(--rnm-ink); border-radius: 22px; box-shadow: 5px 6px 0 var(--rnm-ink); overflow: hidden; text-decoration: none; color: inherit; transition: transform 180ms var(--rnm-ease-bounce); }
+  .post:hover { transform: translate(-2px,-2px); box-shadow: 7px 9px 0 var(--rnm-ink); }
+  .post .cover { aspect-ratio: 16/9; border-bottom: 3px solid var(--rnm-ink); }
+  .post .body { padding: 22px 24px 26px; }
+  .post .tag { display: inline-block; background: var(--rnm-sky); border: 2px solid var(--rnm-ink); padding: 3px 10px; border-radius: 999px; font-family: var(--rnm-font-display); font-weight: 600; font-size: 12px; margin-bottom: 10px; }
+  .post h3 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 22px; line-height: 1.2; margin: 0 0 8px; }
+  .post p { font-size: 14px; color: var(--rnm-ink-soft); line-height: 1.55; margin: 0 0 14px; }
+  .post .meta { display: flex; gap: 10px; font-size: 12px; color: var(--rnm-ink-mute); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  .cv-a { background: linear-gradient(var(--rnm-blue-soft), var(--rnm-sky)); position: relative; }
+  .cv-a::before { content: "☀️"; position: absolute; top: 30%; left: 50%; transform: translate(-50%,-50%); font-size: 68px; }
+  .cv-a::after { content: ""; position: absolute; bottom: 20%; left: 20%; right: 20%; height: 30%; background: var(--rnm-orange-dark); border: 3px solid var(--rnm-ink); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
+
+  .cv-b { background: var(--rnm-cream); position: relative; display: grid; place-items: center; }
+  .cv-b::before { content: ""; width: 60%; height: 55%; background: repeating-linear-gradient(to bottom, var(--rnm-blue) 0 18px, var(--rnm-blue-dark) 18px 20px, var(--rnm-blue) 20px 38px); border: 3px solid var(--rnm-ink); border-radius: 6px; box-shadow: 4px 5px 0 var(--rnm-ink); }
+
+  .cv-c { background: linear-gradient(var(--rnm-blue-darker), var(--rnm-blue-dark)); position: relative; }
+  .cv-c::before { content: "💨"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 72px; }
+
+  .cv-d { background: var(--rnm-orange-soft); position: relative; display: grid; place-items: center; }
+  .cv-d::before { content: ""; width: 55%; height: 55%; background: linear-gradient(var(--rnm-ink), var(--rnm-ink)) 50% 50%/4px 100%, linear-gradient(var(--rnm-ink), var(--rnm-ink)) 50% 50%/100% 4px, #FFF; background-repeat: no-repeat; border: 4px solid var(--rnm-ink); border-radius: 6px; box-shadow: 4px 5px 0 var(--rnm-ink); }
+
+  .cv-e { background: var(--rnm-sky); position: relative; }
+  .cv-e::before { content: "🧾"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 72px; }
+
+  .cv-f { background: var(--rnm-sand); position: relative; }
+  .cv-f::before { content: ""; position: absolute; top: 35%; left: 15%; right: 15%; height: 22px; background: var(--rnm-orange); border: 3px solid var(--rnm-ink); border-radius: 0 0 12px 12px; box-shadow: 4px 4px 0 var(--rnm-ink); }
+</style>
+</head>
+<body data-screen-label="Blog">
+
+<header class="rnm-header">
+  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Licensed &amp; Insured</div></div></a>
+  <nav class="rnm-nav">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="svc-dropdown">
+      <a href="services.html" id="svc-trigger">Services &#9662;</a>
+      <div class="dropdown-panel" id="svc-panel" style="display:none">
+        <div class="dropdown-panel-inner">
+          <a href="roofing.html">Roof Replacement</a>
+          <a href="siding.html">Energy-Efficient Siding</a>
+          <a href="windows.html">Energy-Efficient Windows</a>
+          <a href="gutters.html">Gutter Installation</a>
+        </div>
+      </div>
+    </div>
+    <a href="about-us.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="rnm-header-cta">
+    <a class="phone" href="tel:8329910928">832-991-0928</a>
+    <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  </div>
+</header>
+<script>
+(function(){
+  var dd = document.getElementById('svc-dropdown');
+  var panel = document.getElementById('svc-panel');
+  var timer;
+  function show(){ clearTimeout(timer); panel.style.display = 'block'; }
+  function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
+  dd.addEventListener('mouseenter', show);
+  dd.addEventListener('mouseleave', hide);
+  panel.addEventListener('mouseenter', show);
+  panel.addEventListener('mouseleave', hide);
+})();
+</script>
+
+<section class="rnm-page-hero">
+  <div class="wrap">
+    <div class="rnm-eyebrow">From the crew</div>
+    <h1>Straight talk about<br/>Houston home exteriors.</h1>
+    <p class="lead">No fluff, no SEO word salad. Just practical guides on roofs, siding, windows, and gutters from people who do it every day.</p>
+  </div>
+</section>
+
+<section class="rnm-section cream">
+  <div class="wrap">
+    <div class="featured">
+      <div class="cover"></div>
+      <div>
+        <div class="tag">Guide · 7 min read</div>
+        <h2>7 signs your Houston roof needs replacement (not just repair)</h2>
+        <p>After a storm season, knowing the difference between a patch job and a full replacement can save you thousands. Here's the honest checklist we use when we climb your roof.</p>
+        <div class="byline">
+          <div class="avatar">PB</div>
+          <div>Phil Benham · Jan 18, 2026</div>
+        </div>
+        <div style="margin-top:24px;">
+          <a href="blog-does-my-roof-need-replacing.html" class="rnm-btn">Read the full guide</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="posts">
+      <a href="blog-hardie-vs-vinyl.html" class="post">
+        <div class="cover cv-b"></div>
+        <div class="body">
+          <div class="tag">Siding</div>
+          <h3>Best siding materials for Houston's heat, humidity &amp; hail</h3>
+          <p>Not all siding is created equal. Here's what actually holds up in the Texas Gulf Coast climate.</p>
+          <div class="meta"><span>Tommy Nguyen</span><span>·</span><span>Dec 4, 2025</span></div>
+        </div>
+      </a>
+      <a href="blog-hurricane-ready.html" class="post">
+        <div class="cover cv-c"></div>
+        <div class="body">
+          <div class="tag">Storm prep</div>
+          <h3>The 8 things we check on every customer's roof before hurricane season</h3>
+          <p>Free checklist. Walk your roof (or send someone who can) and spot the problems that turn a Category 1 into a $30k insurance claim.</p>
+          <div class="meta"><span>Marcus Johnson</span><span>·</span><span>Nov 12, 2025</span></div>
+        </div>
+      </a>
+      <a href="blog-does-my-roof-need-replacing.html" class="post">
+        <div class="cover cv-a"></div>
+        <div class="body">
+          <div class="tag">Roofing</div>
+          <h3>7 signs your Houston roof needs replacement (not just repair)</h3>
+          <p>After a storm season, knowing the difference between a patch job and a full replacement can save you thousands.</p>
+          <div class="meta"><span>Phil Benham</span><span>·</span><span>Oct 29, 2025</span></div>
+        </div>
+      </a>
+      <a href="blog-gutters-houston.html" class="post">
+        <div class="cover cv-f"></div>
+        <div class="body">
+          <div class="tag">Gutters</div>
+          <h3>Why gutters are non-negotiable in Houston (and what to do about it)</h3>
+          <p>Houston gets 52 inches of rain a year. Without proper gutters, every drop finds its own path — usually straight at your foundation.</p>
+          <div class="meta"><span>Tommy Nguyen</span><span>·</span><span>Sep 15, 2025</span></div>
+        </div>
+      </a>
+      <a href="blog-roof-insurance-claim.html" class="post">
+        <div class="cover cv-e"></div>
+        <div class="body">
+          <div class="tag">Insurance</div>
+          <h3>How to file a roof insurance claim in Texas (step-by-step)</h3>
+          <p>Complete guidance from immediately after severe weather through project completion — without getting taken advantage of.</p>
+          <div class="meta"><span>Phil Benham</span><span>·</span><span>Aug 22, 2025</span></div>
+        </div>
+      </a>
+      <a href="blog-exterior-upgrades-2025.html" class="post">
+        <div class="cover cv-d"></div>
+        <div class="body">
+          <div class="tag">Home value</div>
+          <h3>5 exterior upgrades that add the most value to Houston homes in 2025</h3>
+          <p>Exterior projects ranked by ROI and market impact — so you know where to spend first.</p>
+          <div class="meta"><span>Phil Benham</span><span>·</span><span>Jul 30, 2025</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-cta">
+  <div class="wrap">
+    <img src="assets/logo-mascot.png" alt="" class="mascot"/>
+    <h2>Questions we haven't answered yet?</h2>
+    <p>Email us or call. If it's a good one, we'll write the next post about it.</p>
+    <div class="actions">
+      <a href="contact.html" class="rnm-btn ink lg">Ask us anything</a>
+      <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rnm-footer">
+  <div class="wrap">
+    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew.</p></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roof Replacement</a></li><li><a href="siding.html">Energy Siding</a></li><li><a href="windows.html">Energy Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>437 Holly Branch Ln</li><li>Kemah, TX 77565</li><li>Mon–Fri 8am–6pm</li><li>Sat 9am–3pm</li></ul></div>
+  </div>
+  <div class="bottom"><div>© 2026 Roofs-N-More LLC · Licensed &amp; insured</div><div>Made with hammers in Kemah, TX.</div></div>
+</footer>
+
+</body>
+</html>

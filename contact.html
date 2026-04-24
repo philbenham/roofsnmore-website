@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact — Roofs-N-More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .contact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: flex-start; }
+  .cform { background: #fff; border: 3.5px solid var(--rnm-ink); border-radius: 24px; box-shadow: 6px 8px 0 var(--rnm-ink); padding: 36px; }
+  .cform h2 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 32px; margin: 0 0 6px; }
+  .cform .sub { font-size: 15px; color: var(--rnm-ink-soft); margin-bottom: 24px; font-weight: 600; }
+  .cform .row { display: grid; gap: 6px; margin-bottom: 18px; }
+  .cform .row.two { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .cform label { font-family: var(--rnm-font-display); font-weight: 600; font-size: 14px; color: var(--rnm-ink); }
+  .cform input, .cform select, .cform textarea {
+    font-family: var(--rnm-font-body); font-weight: 600; font-size: 15px;
+    padding: 12px 14px; border: 2.5px solid var(--rnm-ink); border-radius: 10px;
+    background: var(--rnm-cream); color: var(--rnm-ink); outline: none;
+    box-shadow: 3px 3px 0 var(--rnm-ink); transition: transform 120ms;
+  }
+  .cform input:focus, .cform select:focus, .cform textarea:focus { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--rnm-ink); }
+  .cform textarea { min-height: 120px; resize: vertical; }
+  .cform .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+  .cform .chip { padding: 8px 14px; border-radius: 999px; border: 2.5px solid var(--rnm-ink); background: #fff; font-family: var(--rnm-font-display); font-weight: 600; font-size: 14px; cursor: pointer; }
+  .cform .chip input { display: none; }
+  .cform .chip:has(input:checked) { background: var(--rnm-orange); color: #fff; }
+  .cform .submit { margin-top: 8px; }
+
+  .ci-list { display: grid; gap: 20px; }
+  .ci-card { background: #fff; border: 3px solid var(--rnm-ink); border-radius: 18px; box-shadow: 4px 5px 0 var(--rnm-ink); padding: 24px 26px; display: grid; grid-template-columns: 52px 1fr; gap: 18px; align-items: flex-start; }
+  .ci-card:nth-child(2) { background: var(--rnm-sky); }
+  .ci-card:nth-child(3) { background: var(--rnm-orange-soft); }
+  .ci-card:nth-child(4) { background: var(--rnm-cream); }
+  .ci-icon { width: 48px; height: 48px; border-radius: 14px; border: 2.5px solid var(--rnm-ink); background: var(--rnm-orange); color: #fff; display: grid; place-items: center; box-shadow: 3px 3px 0 var(--rnm-ink); }
+  .ci-card h3 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 20px; margin: 0 0 4px; }
+  .ci-card a, .ci-card .v { font-family: var(--rnm-font-display); font-weight: 600; font-size: 17px; color: var(--rnm-ink); text-decoration: none; display: block; }
+  .ci-card p { font-size: 14px; color: var(--rnm-ink-soft); margin: 6px 0 0; line-height: 1.55; font-weight: 600; }
+
+  .map {
+    aspect-ratio: 16/9; border: 3px solid var(--rnm-ink); border-radius: 18px; box-shadow: 4px 5px 0 var(--rnm-ink);
+    background:
+      radial-gradient(circle at 62% 55%, var(--rnm-orange) 0 14px, transparent 16px),
+      repeating-linear-gradient(45deg, var(--rnm-blue-soft) 0 30px, var(--rnm-sky) 30px 60px);
+    position: relative; overflow: hidden; margin-top: 20px;
+  }
+  .map::after { content: "Kemah, TX · 832-991-0928"; position: absolute; bottom: 16px; left: 16px; background: #fff; border: 2.5px solid var(--rnm-ink); padding: 6px 14px; border-radius: 8px; font-family: var(--rnm-font-display); font-weight: 600; font-size: 14px; box-shadow: 3px 3px 0 var(--rnm-ink); }
+</style>
+</head>
+<body data-screen-label="Contact">
+
+<header class="rnm-header">
+  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Licensed &amp; Insured</div></div></a>
+  <nav class="rnm-nav">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="svc-dropdown">
+      <a href="services.html" id="svc-trigger">Services &#9662;</a>
+      <div class="dropdown-panel" id="svc-panel" style="display:none">
+        <div class="dropdown-panel-inner">
+          <a href="roofing.html">Roof Replacement</a>
+          <a href="siding.html">Energy-Efficient Siding</a>
+          <a href="windows.html">Energy-Efficient Windows</a>
+          <a href="gutters.html">Gutter Installation</a>
+        </div>
+      </div>
+    </div>
+    <a href="about-us.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="rnm-header-cta">
+    <a class="phone" href="tel:8329910928">832-991-0928</a>
+    <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  </div>
+</header>
+<script>
+(function(){
+  var dd = document.getElementById('svc-dropdown');
+  var panel = document.getElementById('svc-panel');
+  var timer;
+  function show(){ clearTimeout(timer); panel.style.display = 'block'; }
+  function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
+  dd.addEventListener('mouseenter', show);
+  dd.addEventListener('mouseleave', hide);
+  panel.addEventListener('mouseenter', show);
+  panel.addEventListener('mouseleave', hide);
+})();
+</script>
+
+<section class="rnm-page-hero">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Get in touch</div>
+    <h1>Get in touch.</h1>
+    <p class="lead">We're a small crew. When you call, email, or text, you reach a real person in Kemah — not a call center in another state. Fill out the form and we'll get back to you within one business day — usually same day.</p>
+  </div>
+</section>
+
+<section class="rnm-section cream">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="cform">
+        <h2>Send us a message</h2>
+        <p class="sub">We'll get back to you within one business day — usually same day. Or skip this and call us — we answer faster that way.</p>
+        <form onsubmit="event.preventDefault(); alert('Thanks! We will reply within 2 business hours.');">
+          <div class="row two">
+            <div class="row"><label>First name</label><input required placeholder="Jane" /></div>
+            <div class="row"><label>Last name</label><input required placeholder="Smith" /></div>
+          </div>
+          <div class="row two">
+            <div class="row"><label>Email</label><input type="email" required placeholder="jane@example.com" /></div>
+            <div class="row"><label>Phone</label><input type="tel" placeholder="(832) 555-0123" /></div>
+          </div>
+          <div class="row">
+            <label>Zip code</label>
+            <input placeholder="77565" />
+          </div>
+          <div class="row">
+            <label>What do you need?</label>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="need" checked /> Free estimate</label>
+              <label class="chip"><input type="radio" name="need" /> Insurance claim help</label>
+              <label class="chip"><input type="radio" name="need" /> Warranty question</label>
+              <label class="chip"><input type="radio" name="need" /> Something else</label>
+            </div>
+          </div>
+          <div class="row">
+            <label>Service (pick all that apply)</label>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" /> Roof</label>
+              <label class="chip"><input type="checkbox" /> Siding</label>
+              <label class="chip"><input type="checkbox" /> Windows</label>
+              <label class="chip"><input type="checkbox" /> Gutters</label>
+              <label class="chip"><input type="checkbox" /> Not sure yet</label>
+            </div>
+          </div>
+          <div class="row">
+            <label>Tell us what's going on</label>
+            <textarea placeholder="Roof is 17 years old, lost a few shingles after the last storm, want to know my options..."></textarea>
+          </div>
+          <button type="submit" class="rnm-btn lg submit">Send to the crew →</button>
+        </form>
+      </div>
+
+      <div>
+        <div class="ci-list">
+          <div class="ci-card">
+            <div class="ci-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7 12.8 12.8 0 00.7 2.8 2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5 12.8 12.8 0 002.8.7A2 2 0 0122 17z"/></svg></div>
+            <div><h3>Call or text</h3><a href="tel:8329910928">832-991-0928</a><p>Fastest way to reach us. Text works too — we reply usually within 20 minutes.</p></div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-icon" style="background:var(--rnm-blue);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4a2 2 0 01-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><h3>Email</h3><a href="mailto:hello@roofs-n-more.com">hello@roofs-n-more.com</a><p>Good for insurance docs, material questions, and anything that needs a written reply.</p></div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-icon" style="background:var(--rnm-blue-dark);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h3>Office</h3><div class="v">437 Holly Branch Ln<br/>Kemah, TX 77565</div><p>Not a storefront — this is our shop. Call ahead if you want to swing by with samples.</p></div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-icon" style="background:var(--rnm-orange-dark);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div><h3>Hours</h3><div class="v">Mon–Fri · 8am–6pm<br/>Saturday · 9am–3pm<br/>Sunday · Closed</div><p>Storm damage after hours? Call anyway — we do our best to pick up when it matters.</p></div>
+          </div>
+        </div>
+        <div class="map"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-cta">
+  <div class="wrap">
+    <img src="assets/logo-mascot.png" alt="" class="mascot"/>
+    <h2>Or just get an estimate now.</h2>
+    <p>Real price, 90 seconds, no sales call. Works for roof, siding, windows, and gutters.</p>
+    <div class="actions">
+      <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn ink lg">Free AI instant estimate</a>
+      <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rnm-footer">
+  <div class="wrap">
+    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew.</p></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roofing</a></li><li><a href="siding.html">Siding</a></li><li><a href="windows.html">Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>437 Holly Branch Ln</li><li>Kemah, TX 77565</li><li>Mon–Fri 8am–6pm</li><li>Sat 9am–3pm</li></ul></div>
+  </div>
+  <div class="bottom"><div>© 2026 Roofs-N-More LLC</div><div>Made with hammers in Kemah, TX.</div></div>
+</footer>
+
+</body>
+</html>

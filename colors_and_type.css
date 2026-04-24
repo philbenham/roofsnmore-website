@@ -1,0 +1,216 @@
+/* ============================================================
+   Roofs-N-More • Colors & Type tokens
+   Derived from the mascot logo: cerulean blue + bright orange,
+   bold black outlines, white highlights. Friendly, chunky,
+   hand-drawn-cartoon energy — NOT corporate or minimal.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@400;700&display=swap');
+
+:root {
+  /* ---------- Brand core ---------- */
+  --rnm-blue:          #2BA6E0;   /* Logo cerulean — primary */
+  --rnm-blue-dark:     #1C7FB0;   /* Roof + overalls shadow */
+  --rnm-blue-darker:   #14628A;   /* Deeper accents, press states */
+  --rnm-blue-light:    #6CC6ED;
+  --rnm-blue-soft:     #D6EEF9;   /* Pale wash / tints */
+
+  --rnm-orange:        #F7931E;   /* Logo orange — accent / CTA */
+  --rnm-orange-dark:   #D97706;
+  --rnm-orange-deep:   #B45309;   /* Hover/press */
+  --rnm-orange-light:  #FDBA74;
+  --rnm-orange-soft:   #FEEBD4;   /* Pale wash */
+
+  /* Outline + ink — the brand uses heavy black strokes */
+  --rnm-ink:           #0F1A24;   /* Primary text, cartoon outline */
+  --rnm-ink-soft:      #2A3743;
+  --rnm-ink-mute:      #5A6874;
+
+  /* Neutrals */
+  --rnm-paper:         #FFFFFF;
+  --rnm-cream:         #FFF8EE;   /* Warm off-white background */
+  --rnm-sand:          #F5EBD8;   /* Warmer surface */
+  --rnm-sky:           #EAF6FC;   /* Cool blue-tinted background */
+  --rnm-line:          #E5DDCB;   /* Warm divider */
+  --rnm-line-cool:     #CFE4EF;   /* Cool divider */
+
+  /* Semantic */
+  --rnm-success:       #2E8B57;
+  --rnm-success-soft:  #DDEFE1;
+  --rnm-warning:       #F7931E;   /* Reuses brand orange */
+  --rnm-warning-soft:  #FEEBD4;
+  --rnm-danger:        #C0392B;
+  --rnm-danger-soft:   #F8DDD9;
+  --rnm-info:          #2BA6E0;   /* Reuses brand blue */
+
+  /* Role tokens */
+  --rnm-bg:            var(--rnm-cream);
+  --rnm-bg-alt:        var(--rnm-sky);
+  --rnm-surface:       var(--rnm-paper);
+  --rnm-fg:            var(--rnm-ink);
+  --rnm-fg-muted:      var(--rnm-ink-mute);
+  --rnm-border:        var(--rnm-ink);          /* Cartoon outline */
+  --rnm-border-soft:   var(--rnm-line);
+  --rnm-primary:       var(--rnm-blue);
+  --rnm-on-primary:    #FFFFFF;
+  --rnm-accent:        var(--rnm-orange);
+  --rnm-on-accent:     #FFFFFF;
+
+  /* ---------- Type ---------- */
+  --rnm-font-display:  'Fredoka', 'Baloo 2', system-ui, sans-serif;
+  --rnm-font-body:     'Nunito', system-ui, -apple-system, sans-serif;
+  --rnm-font-hand:     'Caveat', 'Kalam', cursive;  /* Handwritten accents */
+  --rnm-font-mono:     ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Type scale — generous, chunky */
+  --rnm-text-xs:       0.75rem;   /* 12 */
+  --rnm-text-sm:       0.875rem;  /* 14 */
+  --rnm-text-base:     1rem;      /* 16 */
+  --rnm-text-lg:       1.125rem;  /* 18 */
+  --rnm-text-xl:       1.375rem;  /* 22 */
+  --rnm-text-2xl:      1.75rem;   /* 28 */
+  --rnm-text-3xl:      2.25rem;   /* 36 */
+  --rnm-text-4xl:      3rem;      /* 48 */
+  --rnm-text-5xl:      4rem;      /* 64 */
+  --rnm-text-6xl:      5.25rem;   /* 84 */
+
+  --rnm-leading-tight: 1.08;
+  --rnm-leading-snug:  1.2;
+  --rnm-leading-body:  1.55;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --rnm-space-1:  4px;
+  --rnm-space-2:  8px;
+  --rnm-space-3:  12px;
+  --rnm-space-4:  16px;
+  --rnm-space-5:  24px;
+  --rnm-space-6:  32px;
+  --rnm-space-7:  48px;
+  --rnm-space-8:  64px;
+  --rnm-space-9:  96px;
+
+  /* ---------- Radii — chunky & friendly ---------- */
+  --rnm-radius-sm:  8px;
+  --rnm-radius-md:  14px;
+  --rnm-radius-lg:  20px;
+  --rnm-radius-xl:  28px;
+  --rnm-radius-pill: 999px;
+
+  /* ---------- Borders — heavy cartoon outlines ---------- */
+  --rnm-stroke-1: 1.5px;
+  --rnm-stroke-2: 2.5px;
+  --rnm-stroke-3: 3.5px;   /* Default on buttons + cards */
+  --rnm-stroke-4: 5px;     /* Hero accents */
+
+  /* ---------- Shadows — offset block "sticker" shadow, no soft blur ---------- */
+  --rnm-shadow-sticker-sm: 2px 3px 0 var(--rnm-ink);
+  --rnm-shadow-sticker:    4px 5px 0 var(--rnm-ink);
+  --rnm-shadow-sticker-lg: 6px 8px 0 var(--rnm-ink);
+  --rnm-shadow-soft:       0 6px 18px rgba(15, 26, 36, 0.10);
+  --rnm-shadow-lift:       0 12px 32px rgba(15, 26, 36, 0.14);
+
+  /* ---------- Motion ---------- */
+  --rnm-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --rnm-ease-out:    cubic-bezier(0.2, 0.8, 0.2, 1);
+  --rnm-dur-fast:    120ms;
+  --rnm-dur-med:     220ms;
+  --rnm-dur-slow:    420ms;
+}
+
+/* ============================================================
+   Semantic element styles
+   ============================================================ */
+
+.rnm-root,
+body.rnm {
+  font-family: var(--rnm-font-body);
+  font-size: var(--rnm-text-base);
+  color: var(--rnm-fg);
+  background: var(--rnm-bg);
+  line-height: var(--rnm-leading-body);
+  font-weight: 600;                /* body default is slightly bold — friendly */
+  -webkit-font-smoothing: antialiased;
+}
+
+.rnm h1, .rnm-h1 {
+  font-family: var(--rnm-font-display);
+  font-weight: 700;
+  font-size: var(--rnm-text-5xl);
+  line-height: var(--rnm-leading-tight);
+  letter-spacing: -0.01em;
+  color: var(--rnm-fg);
+  margin: 0;
+}
+
+.rnm h2, .rnm-h2 {
+  font-family: var(--rnm-font-display);
+  font-weight: 700;
+  font-size: var(--rnm-text-4xl);
+  line-height: var(--rnm-leading-snug);
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+
+.rnm h3, .rnm-h3 {
+  font-family: var(--rnm-font-display);
+  font-weight: 600;
+  font-size: var(--rnm-text-2xl);
+  line-height: var(--rnm-leading-snug);
+  margin: 0;
+}
+
+.rnm h4, .rnm-h4 {
+  font-family: var(--rnm-font-display);
+  font-weight: 600;
+  font-size: var(--rnm-text-xl);
+  line-height: var(--rnm-leading-snug);
+  margin: 0;
+}
+
+.rnm-eyebrow {
+  font-family: var(--rnm-font-body);
+  font-weight: 900;
+  font-size: var(--rnm-text-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rnm-orange-dark);
+}
+
+.rnm-lead {
+  font-size: var(--rnm-text-lg);
+  line-height: var(--rnm-leading-body);
+  color: var(--rnm-ink-soft);
+  font-weight: 600;
+}
+
+.rnm p, .rnm-p {
+  font-size: var(--rnm-text-base);
+  line-height: var(--rnm-leading-body);
+  color: var(--rnm-ink-soft);
+  margin: 0 0 var(--rnm-space-4);
+  font-weight: 600;
+}
+
+.rnm-hand {
+  font-family: var(--rnm-font-hand);
+  font-weight: 700;
+  font-size: var(--rnm-text-2xl);
+  color: var(--rnm-orange-dark);
+  transform: rotate(-3deg);
+  display: inline-block;
+}
+
+.rnm small, .rnm-small {
+  font-size: var(--rnm-text-sm);
+  color: var(--rnm-ink-mute);
+  font-weight: 600;
+}
+
+.rnm code, .rnm-code {
+  font-family: var(--rnm-font-mono);
+  font-size: 0.92em;
+  background: var(--rnm-sand);
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: 1.5px solid var(--rnm-ink);
+}

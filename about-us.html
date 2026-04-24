@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About Us — Roofs-N-More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* Page-specific */
+  .story-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .story-grid .photo {
+    aspect-ratio: 4/5; border: 3px solid var(--rnm-ink); border-radius: 24px;
+    box-shadow: 6px 8px 0 var(--rnm-ink);
+    background:
+      radial-gradient(circle at 30% 30%, #FDBA74 0 20px, transparent 22px),
+      repeating-linear-gradient(135deg, var(--rnm-blue-light) 0 24px, var(--rnm-blue) 24px 48px);
+    position: relative; overflow: hidden;
+    transform: rotate(-1.5deg);
+  }
+  .story-grid .photo::after {
+    content: "Crew photo"; position: absolute; bottom: 20px; left: 20px;
+    background: #fff; border: 2.5px solid var(--rnm-ink); padding: 8px 14px;
+    font-family: var(--rnm-font-hand); font-weight: 700; font-size: 22px;
+    transform: rotate(-2deg);
+  }
+  .story-grid h2 { font-size: 56px; }
+  .story-grid p { font-size: 17px; line-height: 1.6; color: var(--rnm-ink-soft); margin: 0 0 16px; }
+
+  .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .value .icon {
+    width: 72px; height: 72px; border-radius: 18px; border: 3px solid var(--rnm-ink);
+    box-shadow: 4px 5px 0 var(--rnm-ink);
+    display: grid; place-items: center; color: #fff;
+    margin-bottom: 18px;
+  }
+  .value h3 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 24px; margin: 0 0 8px; }
+  .value p { font-size: 15px; line-height: 1.55; color: var(--rnm-ink-soft); margin: 0; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .stat { text-align: center; padding: 28px 16px; border: 3px solid var(--rnm-ink); border-radius: 20px; background: #fff; box-shadow: 4px 5px 0 var(--rnm-ink); }
+  .stat:nth-child(2n) { background: var(--rnm-sky); transform: rotate(-1deg); }
+  .stat:nth-child(3n) { background: var(--rnm-orange-soft); transform: rotate(1deg); }
+  .stat .n { font-family: var(--rnm-font-display); font-weight: 700; font-size: 56px; line-height: 1; color: var(--rnm-blue-dark); }
+  .stat .l { font-family: var(--rnm-font-display); font-weight: 600; font-size: 15px; margin-top: 8px; letter-spacing: 0.02em; }
+
+  .crew { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .member {
+    background: #fff; border: 3px solid var(--rnm-ink); border-radius: 20px;
+    box-shadow: 4px 5px 0 var(--rnm-ink); padding: 22px 18px; text-align: center;
+  }
+  .member:nth-child(2n) { transform: rotate(-1.5deg); }
+  .member:nth-child(2n+1) { transform: rotate(1deg); }
+  .member .avatar {
+    width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--rnm-ink);
+    background: var(--rnm-orange); margin: 0 auto 14px;
+    display: grid; place-items: center; font-family: var(--rnm-font-display); font-weight: 700; font-size: 36px; color: #fff;
+  }
+  .member h4 { font-family: var(--rnm-font-display); font-size: 20px; margin: 0 0 4px; font-weight: 700; }
+  .member .role { font-size: 13px; color: var(--rnm-ink-mute); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; }
+  .member p { font-size: 14px; color: var(--rnm-ink-soft); margin: 10px 0 0; line-height: 1.5; }
+
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline::before { content: ""; position: absolute; left: 14px; top: 8px; bottom: 8px; width: 4px; background: var(--rnm-ink); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 36px; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -32px; top: 6px; width: 20px; height: 20px;
+    background: var(--rnm-orange); border: 3px solid var(--rnm-ink); border-radius: 50%;
+    box-shadow: 2px 2px 0 var(--rnm-ink);
+  }
+  .tl-item .year { font-family: var(--rnm-font-display); font-weight: 700; font-size: 14px; color: var(--rnm-orange-dark); letter-spacing: 0.1em; text-transform: uppercase; }
+  .tl-item h3 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 24px; margin: 4px 0 6px; }
+  .tl-item p { font-size: 15px; line-height: 1.55; color: var(--rnm-ink-soft); margin: 0; max-width: 640px; }
+</style>
+</head>
+<body data-screen-label="About Us">
+
+<header class="rnm-header">
+  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Licensed &amp; Insured</div></div></a>
+  <nav class="rnm-nav">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="svc-dropdown">
+      <a href="services.html" id="svc-trigger">Services &#9662;</a>
+      <div class="dropdown-panel" id="svc-panel" style="display:none">
+        <div class="dropdown-panel-inner">
+          <a href="roofing.html">Roof Replacement</a>
+          <a href="siding.html">Energy-Efficient Siding</a>
+          <a href="windows.html">Energy-Efficient Windows</a>
+          <a href="gutters.html">Gutter Installation</a>
+        </div>
+      </div>
+    </div>
+    <a href="about-us.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="rnm-header-cta">
+    <a class="phone" href="tel:8329910928">832-991-0928</a>
+    <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  </div>
+</header>
+<script>
+(function(){
+  var dd = document.getElementById('svc-dropdown');
+  var panel = document.getElementById('svc-panel');
+  var timer;
+  function show(){ clearTimeout(timer); panel.style.display = 'block'; }
+  function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
+  dd.addEventListener('mouseenter', show);
+  dd.addEventListener('mouseleave', hide);
+  panel.addEventListener('mouseenter', show);
+  panel.addEventListener('mouseleave', hide);
+})();
+</script>
+
+<section class="rnm-page-hero">
+  <div class="wrap">
+    <div class="rnm-eyebrow">About Roofs-N-More</div>
+    <h1>Houston's trusted home exterior crew — founded in Kemah, built on honesty.</h1>
+    <p class="lead">We started in 2015 to give Houston homeowners a contractor they could actually trust. A decade later, we've installed 850+ roofs and hundreds of exterior projects — and we still answer the phone ourselves.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="rnm-section white">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="photo"></div>
+      <div>
+        <div class="rnm-eyebrow" style="margin-bottom:10px;">Our story</div>
+        <h2>Started on a ladder in Kemah. Still climbing it.</h2>
+        <p>Roofs-N-More was founded in 2015 by local tradesmen right here in Kemah, TX. We got started because we kept watching out-of-town contractors show up after storms — take deposits, do shoddy work, and disappear before the next rain. We knew we could do better.</p>
+        <p>A decade later: 850+ roofs installed, hundreds of homes sided, thousands of windows replaced. We're still a crew you can call. No call centers, no high-pressure sales, no "limited-time" scare tactics. Just a small team of licensed pros who give you a straight answer, a fair price, and work that holds up.</p>
+        <p><span class="rnm-hand">— Phil &amp; the crew</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="rnm-section sky">
+  <div class="wrap">
+    <div class="rnm-eyebrow">What we believe</div>
+    <h2>Four values we won't compromise on.</h2>
+    <p class="lead">They're simple. They're why our customers keep calling back and sending their neighbors.</p>
+    <div class="values">
+      <div class="value">
+        <div class="icon" style="background:var(--rnm-orange);"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Honest pricing.</h3>
+        <p>Our written estimate is the price. No surprise change orders, no "we found extra rot we have to charge you for" after we've started.</p>
+      </div>
+      <div class="value">
+        <div class="icon" style="background:var(--rnm-blue);"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+        <h3>Craftsmanship first.</h3>
+        <p>We're manufacturer-certified on every product we install. GAF Certified roofing, James Hardie Preferred siding — we do it right or we don't do it.</p>
+      </div>
+      <div class="value">
+        <div class="icon" style="background:var(--rnm-blue-dark);"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M5 6h14l2 4H3zM5 10v10h14V10"/></svg></div>
+        <h3>Locally accountable.</h3>
+        <p>We live in Kemah. Our kids go to school here. When the next storm rolls through, we're right here — not a call-center queue in another state.</p>
+      </div>
+      <div class="value">
+        <div class="icon" style="background:var(--rnm-orange-dark);"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg></div>
+        <h3>A crew you can trust.</h3>
+        <p>No subs, no rotating strangers. The same trained crew from first ladder to final walkthrough — and we're here after the job if anything comes up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="rnm-section cream">
+  <div class="wrap">
+    <div class="rnm-eyebrow">By the numbers</div>
+    <h2>Ten years. A lot of ladders.</h2>
+    <div class="stats" style="margin-top:36px;">
+      <div class="stat"><div class="n">850+</div><div class="l">Roofs installed</div></div>
+      <div class="stat"><div class="n">10+</div><div class="l">Years in business</div></div>
+      <div class="stat"><div class="n">5★</div><div class="l">Google rating</div></div>
+      <div class="stat"><div class="n">98%</div><div class="l">Customer satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CREW -->
+<section class="rnm-section white">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Meet the crew</div>
+    <h2>Real people. Real phone numbers.</h2>
+    <p class="lead">These are the folks who'll actually be at your house. No subs, no rotating strangers — the same crew from first ladder to final walkthrough.</p>
+    <div class="crew" style="margin-top:36px;">
+      <div class="member">
+        <div class="avatar" style="background:var(--rnm-orange);">PB</div>
+        <h4>Phil Benham</h4>
+        <div class="role">Owner · Estimator</div>
+        <p>Founded Roofs-N-More in 2015. If you called us, you probably talked to Phil.</p>
+      </div>
+      <div class="member">
+        <div class="avatar" style="background:var(--rnm-blue);">RG</div>
+        <h4>Rosa García</h4>
+        <div class="role">Operations</div>
+        <p>Runs scheduling, permits, and insurance claims. Keeps us honest.</p>
+      </div>
+      <div class="member">
+        <div class="avatar" style="background:var(--rnm-blue-dark);">MJ</div>
+        <h4>Marcus Johnson</h4>
+        <div class="role">Lead Foreman</div>
+        <p>Leads roof tear-offs. GAF-certified master installer.</p>
+      </div>
+      <div class="member">
+        <div class="avatar" style="background:var(--rnm-orange-dark);">TN</div>
+        <h4>Tommy Nguyen</h4>
+        <div class="role">Siding &amp; Windows</div>
+        <p>Runs our exterior crew. Former James Hardie factory tech.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="rnm-section sky">
+  <div class="wrap">
+    <div class="rnm-eyebrow">How we got here</div>
+    <h2>Ten years, one truck at a time.</h2>
+    <div class="timeline" style="margin-top:40px;">
+      <div class="tl-item">
+        <div class="year">2015</div>
+        <h3>Founded in Kemah by local tradesmen.</h3>
+        <p>Phil Benham and the founding crew started Roofs-N-More to counter out-of-town storm chasers who took deposits, did shoddy work, and disappeared. Started from scratch with one truck and a commitment to do it right.</p>
+      </div>
+      <div class="tl-item">
+        <div class="year">2017</div>
+        <h3>First full crew. First warranty call.</h3>
+        <p>Crew grows to six. A customer calls about a leak two years after a job — we fixed it the same week, no charge. Still how we do it.</p>
+      </div>
+      <div class="tl-item">
+        <div class="year">2020</div>
+        <h3>Siding + windows + gutters.</h3>
+        <p>Customers kept asking. Tommy joined to lead exterior work. Now we handle everything from fascia to front door — four services, one crew you already trust.</p>
+      </div>
+      <div class="tl-item">
+        <div class="year">2023</div>
+        <h3>850+ roofs and counting.</h3>
+        <p>Hundreds of homes sided, thousands of windows replaced. Still answering the phone ourselves. Still in Kemah.</p>
+      </div>
+      <div class="tl-item">
+        <div class="year">2025</div>
+        <h3>Launched the AI estimate tool.</h3>
+        <p>So you can get a real number in 90 seconds without a sales call. Because your time matters too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="rnm-cta">
+  <div class="wrap">
+    <img src="assets/logo-mascot.png" alt="" class="mascot"/>
+    <h2>Want the crew at your house?</h2>
+    <p>Get a free estimate in 90 seconds, or pick up the phone — Phil answers it himself most days.</p>
+    <div class="actions">
+      <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn ink lg">Free AI instant estimate</a>
+      <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rnm-footer">
+  <div class="wrap">
+    <div>
+      <div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div>
+      <p class="desc">Houston's trusted home exterior crew. Roofing, siding, windows, and gutters — done right.</p>
+    </div>
+    <div><h4>Services</h4><ul>
+      <li><a href="roofing.html">Roof Replacement</a></li>
+      <li><a href="siding.html">Energy Siding</a></li>
+      <li><a href="windows.html">Energy Windows</a></li>
+      <li><a href="gutters.html">Gutters</a></li>
+    </ul></div>
+    <div><h4>Company</h4><ul>
+      <li><a href="about-us.html">About Us</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy-policy.html">Privacy</a></li>
+      <li><a href="terms-and-conditions.html">Terms</a></li>
+    </ul></div>
+    <div><h4>Contact</h4><ul>
+      <li><a href="tel:8329910928">832-991-0928</a></li>
+      <li>437 Holly Branch Ln</li>
+      <li>Kemah, TX 77565</li>
+      <li>Mon–Fri 8am–6pm</li>
+      <li>Sat 9am–3pm</li>
+    </ul></div>
+  </div>
+  <div class="bottom">
+    <div>© 2026 Roofs-N-More LLC · Licensed &amp; insured</div>
+    <div>Made with hammers in Kemah, TX.</div>
+  </div>
+</footer>
+
+</body>
+</html>
