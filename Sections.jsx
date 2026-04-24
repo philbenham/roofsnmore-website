@@ -1,6 +1,6 @@
 const TrustStrip = () => {
   const items = [
-    { icon: 'shield', text: 'Licensed & insured in Texas' },
+    { icon: 'shield', text: 'Fully insured in Texas' },
     { icon: 'check',  text: '5-star rated by homeowners' },
     { icon: 'users',  text: 'Family-owned since 2015' },
     { icon: 'clock',  text: 'Most roofs done in 1 day' },
@@ -208,7 +208,7 @@ const Footer = () => (
       ))}
     </div>
     <div style={{ maxWidth: 1160, margin: '40px auto 0', paddingTop: 20, borderTop: '1.5px solid rgba(255,255,255,0.15)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, fontFamily: 'var(--rnm-font-body)', fontWeight: 700, fontSize: 12, opacity: 0.6 }}>
-      <div>© 2026 Roofs-N-More LLC · Licensed & insured</div>
+      <div>© 2026 Roofs-N-More LLC · Fully insured</div>
       <div>Made with hammers in Kemah, TX.</div>
     </div>
   </footer>

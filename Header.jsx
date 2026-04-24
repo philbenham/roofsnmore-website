@@ -24,7 +24,7 @@ const Header = () => {
         <img src="assets/logo-mascot.png" alt="Roofs-N-More" style={{ width: 52, height: 52 }} />
         <div>
           <div className="name">Roofs-N-More</div>
-          <div className="sub">Kemah, TX · Licensed &amp; Insured</div>
+          <div className="sub">Kemah, TX · Fully Insured</div>
         </div>
       </a>
       <nav className={`rnm-nav${mobileOpen ? ' open' : ''}`}>

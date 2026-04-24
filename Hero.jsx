@@ -26,7 +26,7 @@ const Hero = () => (
         </div>
         <div style={{ marginTop: 28, display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--rnm-ink-soft)', fontFamily: 'var(--rnm-font-body)', fontWeight: 700, fontSize: 14 }}>
-            <Icon name="shield" size={20} color="var(--rnm-blue)" /> Licensed &amp; insured
+            <Icon name="shield" size={20} color="var(--rnm-blue)" /> Fully insured
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--rnm-ink-soft)', fontFamily: 'var(--rnm-font-body)', fontWeight: 700, fontSize: 14 }}>
             <div style={{ display: 'flex', gap: 1, color: 'var(--rnm-orange)' }}>

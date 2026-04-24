@@ -278,9 +278,6 @@ img { max-width: 100%; display: block; }
   .rnm-proof-grid    { grid-template-columns: repeat(2, 1fr) !important; }
   .rnm-footer-grid   { grid-template-columns: 1fr !important; }
 
-  /* Hide hero photo on mobile */
-  .rnm-hero-grid > :last-child { display: none !important; }
-
   /* Buttons */
   .rnm-btn.lg { font-size: 16px; padding: 12px 20px; }
   .rnm-cta .actions { flex-direction: column; align-items: center; }

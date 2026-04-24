@@ -81,7 +81,7 @@
     .area-grid { grid-template-columns:1fr; gap:28px; }
   }
   @media (max-width:480px) {
-    .hero-photo-wrap { display:none; }
+    .hero-photo-wrap { min-height:280px; margin-top:24px; }
     .proof-grid { grid-template-columns:repeat(2,1fr); }
     .proof-stat .n { font-size:44px; }
   }
@@ -90,7 +90,7 @@
 <body data-screen-label="Marketing — Home">
 
 <header class="rnm-header">
-  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Licensed &amp; Insured</div></div></a>
+  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Fully Insured</div></div></a>
   <nav class="rnm-nav" id="main-nav">
     <a href="index.html">Home</a>
     <div class="nav-dropdown" id="svc-dropdown">
@@ -144,16 +144,6 @@
 })();
 </script>
 
-<!-- Trust strip -->
-<section class="rnm-trust">
-  <div class="wrap">
-    <div class="item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3z"/><path d="M9 12l2 2 4-4"/></svg> Licensed &amp; insured in Texas</div>
-    <div class="item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 5-star rated by homeowners</div>
-    <div class="item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><circle cx="17" cy="7" r="3"/><path d="M21 21v-2a4 4 0 00-3-3.8"/></svg> Family-owned since 2015</div>
-    <div class="item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Most roofs done in 1 day</div>
-  </div>
-</section>
-
 <!-- Hero -->
 <section class="rnm-hero-section" style="position:relative;padding:72px 32px 96px;background:var(--rnm-cream);border-bottom:2.5px solid var(--rnm-ink);overflow:hidden;">
   <div class="rnm-hero-grid" style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center;">
@@ -163,10 +153,9 @@
       <p class="hero-lead">Roofing, siding, windows, and gutters — done right by trained, friendly neighbors. Get an instant price range with our free AI estimator, no phone calls or personal info needed.</p>
       <div class="hero-actions">
         <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn lg">Free AI instant estimate <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></a>
-        <a href="portfolio.html" class="rnm-btn ghost lg">View our work</a>
       </div>
       <div class="hero-trust">
-        <div class="hero-trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--rnm-blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3z"/><path d="M9 12l2 2 4-4"/></svg> Licensed &amp; insured</div>
+        <div class="hero-trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--rnm-blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3z"/><path d="M9 12l2 2 4-4"/></svg> Fully insured</div>
         <div class="hero-trust-item"><span class="hero-stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 4 2-7L2 9.5 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 4 2-7L2 9.5 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 4 2-7L2 9.5 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 4 2-7L2 9.5 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 4 2-7L2 9.5 9 9z"/></svg></span> 5-star rated</div>
       </div>
     </div>
@@ -183,6 +172,16 @@
         <div class="phone-num">832-991-0928</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<section class="rnm-trust">
+  <div class="wrap">
+    <div class="item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3z"/><path d="M9 12l2 2 4-4"/></svg> Fully insured in Texas</div>
+    <div class="item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 5-star rated by homeowners</div>
+    <div class="item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><circle cx="17" cy="7" r="3"/><path d="M21 21v-2a4 4 0 00-3-3.8"/></svg> Family-owned since 2015</div>
+    <div class="item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Most roofs done in 1 day</div>
   </div>
 </section>
 
@@ -328,7 +327,7 @@
     <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>437 Holly Branch Ln</li><li>Kemah, TX 77565</li><li>Mon–Fri 8am–6pm</li><li>Sat 9am–3pm</li></ul></div>
   </div>
-  <div class="bottom"><div>© 2026 Roofs-N-More LLC · Licensed &amp; insured</div><div>Made with hammers in Kemah, TX.</div></div>
+  <div class="bottom"><div>© 2026 Roofs-N-More LLC · Fully insured</div><div>Made with hammers in Kemah, TX.</div></div>
 </footer>
 
 <script src="mobile-nav.js"></script>
