@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PROJECT TITLE — Roofs-N-More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* Before/after */
+  .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0; }
+  .ba-card { border: 3px solid var(--rnm-ink); border-radius: 20px; overflow: hidden; box-shadow: 5px 6px 0 var(--rnm-ink); }
+  .ba-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; border-bottom: 3px solid var(--rnm-ink); }
+  .ba-label { font-family: var(--rnm-font-display); font-weight: 700; font-size: 18px; padding: 14px 18px; background: #fff; }
+  .ba-label.before { background: var(--rnm-orange-soft); }
+  .ba-label.after  { background: var(--rnm-blue-soft); }
+
+  /* Project meta chips */
+  .project-meta { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; }
+  .meta-chip { background: #fff; border: 2.5px solid var(--rnm-ink); border-radius: 12px; padding: 10px 18px; box-shadow: 3px 4px 0 var(--rnm-ink); }
+  .meta-chip .label { font-family: var(--rnm-font-body); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--rnm-ink-mute); margin-bottom: 2px; }
+  .meta-chip .value { font-family: var(--rnm-font-display); font-weight: 700; font-size: 16px; }
+
+  /* Photo gallery */
+  .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+  .photo-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border: 2.5px solid var(--rnm-ink); border-radius: 14px; box-shadow: 3px 4px 0 var(--rnm-ink); display: block; }
+
+  /* Testimonial pull-quote */
+  .project-quote { background: var(--rnm-sky); border: 3px solid var(--rnm-ink); border-radius: 20px; box-shadow: 5px 6px 0 var(--rnm-ink); padding: 32px 36px; margin: 36px 0; position: relative; }
+  .project-quote::before { content: "\201C"; font-family: var(--rnm-font-display); font-size: 96px; line-height: 1; color: var(--rnm-orange); position: absolute; top: 8px; left: 24px; }
+  .project-quote p { font-family: var(--rnm-font-body); font-weight: 700; font-size: 20px; line-height: 1.5; color: var(--rnm-ink); margin: 24px 0 16px; }
+  .project-quote .who { font-family: var(--rnm-font-display); font-weight: 700; font-size: 15px; color: var(--rnm-ink-soft); }
+
+  /* Scope list */
+  .scope-list { list-style: none; padding: 0; margin: 0; }
+  .scope-list li { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 2px dashed var(--rnm-line); font-family: var(--rnm-font-body); font-weight: 600; font-size: 16px; }
+  .scope-list li:last-child { border-bottom: none; }
+  .scope-list li::before { content: "✓"; width: 28px; height: 28px; background: var(--rnm-orange); color: #fff; border-radius: 50%; border: 2px solid var(--rnm-ink); display: grid; place-items: center; font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+
+  @media (max-width: 768px) {
+    .ba-grid { grid-template-columns: 1fr; }
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    .project-meta { gap: 8px; }
+  }
+  @media (max-width: 480px) {
+    .photo-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body data-screen-label="Portfolio Detail">
+
+<header class="rnm-header">
+  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Fully Insured</div></div></a>
+  <nav class="rnm-nav">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="svc-dropdown">
+      <a href="services.html" id="svc-trigger">Services &#9662;</a>
+      <div class="dropdown-panel" id="svc-panel" style="display:none">
+        <div class="dropdown-panel-inner">
+          <a href="roofing.html">Roofs</a>
+          <a href="siding.html">Siding</a>
+          <a href="windows.html">Windows</a>
+          <a href="gutters.html">Gutters</a>
+        </div>
+      </div>
+    </div>
+    <a href="about-us.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="rnm-header-cta">
+    <a class="phone" href="tel:8329910928">832-991-0928</a>
+    <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+    <button class="rnm-nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+</header>
+<script>
+(function(){
+  var dd = document.getElementById('svc-dropdown');
+  var panel = document.getElementById('svc-panel');
+  var timer;
+  function show(){ clearTimeout(timer); panel.style.display = 'block'; }
+  function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
+  dd.addEventListener('mouseenter', show);
+  dd.addEventListener('mouseleave', hide);
+  panel.addEventListener('mouseenter', show);
+  panel.addEventListener('mouseleave', hide);
+})();
+</script>
+
+<section class="rnm-page-hero">
+  <div class="wrap">
+    <div class="rnm-eyebrow">PROJECT TYPE · CITY, TX</div>
+    <h1>PROJECT TITLE</h1>
+    <p class="lead">One or two sentences describing the job — what the homeowner needed and what made this project interesting or challenging.</p>
+  </div>
+</section>
+
+<section class="rnm-section cream">
+  <div class="wrap">
+
+    <!-- Before / After -->
+    <h2>Before &amp; after</h2>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <img src="assets/BEFORE-PHOTO.jpg" alt="Before — PROJECT TITLE" />
+        <div class="ba-label before">Before</div>
+      </div>
+      <div class="ba-card">
+        <img src="assets/AFTER-PHOTO.jpg" alt="After — PROJECT TITLE" />
+        <div class="ba-label after">After</div>
+      </div>
+    </div>
+
+    <!-- Project meta -->
+    <div class="project-meta">
+      <div class="meta-chip">
+        <div class="label">Service</div>
+        <div class="value">Roof Replacement</div>
+      </div>
+      <div class="meta-chip">
+        <div class="label">Location</div>
+        <div class="value">League City, TX</div>
+      </div>
+      <div class="meta-chip">
+        <div class="label">Completed</div>
+        <div class="value">March 2025</div>
+      </div>
+      <div class="meta-chip">
+        <div class="label">Timeline</div>
+        <div class="value">1 day</div>
+      </div>
+      <div class="meta-chip">
+        <div class="label">Material</div>
+        <div class="value">GAF Timberline HDZ</div>
+      </div>
+    </div>
+
+    <!-- Scope of work -->
+    <h2>What we did</h2>
+    <ul class="scope-list">
+      <li>Full tear-off of existing shingles and underlayment</li>
+      <li>Replace decking in two damaged sections</li>
+      <li>Install GAF WeatherWatch ice &amp; water shield at all eaves and valleys</li>
+      <li>Install GAF Timberline HDZ architectural shingles — Charcoal</li>
+      <li>Replace all pipe boots, ridge vents, and drip edge</li>
+      <li>Full cleanup and magnetic nail sweep</li>
+    </ul>
+
+    <!-- Customer quote -->
+    <div class="project-quote">
+      <p>"CUSTOMER QUOTE HERE. Keep it short and genuine — one or two sentences about their experience."</p>
+      <div class="who">CUSTOMER NAME · CITY, TX</div>
+    </div>
+
+    <!-- Additional photos -->
+    <h2>More photos</h2>
+    <div class="photo-grid">
+      <img src="assets/PHOTO-1.jpg" alt="" />
+      <img src="assets/PHOTO-2.jpg" alt="" />
+      <img src="assets/PHOTO-3.jpg" alt="" />
+      <img src="assets/PHOTO-4.jpg" alt="" />
+      <img src="assets/PHOTO-5.jpg" alt="" />
+      <img src="assets/PHOTO-6.jpg" alt="" />
+    </div>
+
+  </div>
+</section>
+
+<section class="rnm-cta">
+  <div class="wrap">
+    <img src="assets/logo-mascot.png" alt="" class="mascot" />
+    <h2>Want results like this?</h2>
+    <p>Get a free AI instant estimate on your home — no appointment or personal info needed to start.</p>
+    <div class="actions">
+      <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn ink lg">Get my free AI estimate</a>
+      <a href="tel:8329910928" class="rnm-btn ghost lg">832-991-0928</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rnm-footer">
+  <div class="wrap">
+    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew. Roofing, siding, windows, and gutters — done right.</p></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roofs</a></li><li><a href="siding.html">Energy Siding</a></li><li><a href="windows.html">Energy Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>437 Holly Branch Ln</li><li>Kemah, TX 77565</li><li>Mon–Fri 8am–6pm</li><li>Sat 9am–3pm</li></ul></div>
+  </div>
+  <div class="bottom"><div>© 2026 Roofs-N-More LLC · Fully insured</div><div>Made with hammers in Kemah, TX.</div></div>
+</footer>
+
+<script src="mobile-nav.js"></script>
+</body>
+</html>
