@@ -5,8 +5,7 @@ Static HTML marketing site for **roofsnmore.com** — a swap-in replacement curr
 ## Stack
 - Pure static HTML/CSS — no build step, no Node dependencies
 - Vercel serves files from repo root (`cleanUrls: true`, `trailingSlash: false`)
-- Home page (`index.html`) uses React 18 + Babel loaded from CDN for JSX components
-- All other pages are plain HTML using shared CSS
+- All pages are plain static HTML using shared CSS — no JavaScript frameworks
 
 ## Key files
 | File | Purpose |
@@ -15,7 +14,6 @@ Static HTML marketing site for **roofsnmore.com** — a swap-in replacement curr
 | `site.css` | Shared header, footer, nav, buttons, section chrome |
 | `service-page.css` | Service page layout |
 | `article.css` | Blog article layout |
-| `Header.jsx` / `Hero.jsx` / `Primitives.jsx` / `Sections.jsx` | React components for home page only |
 | `assets/logo-mascot.png` | Brand mascot — used in every header and footer |
 | `estimate-flow/index.html` | Branded wrapper page for the AI estimate iframe |
 
