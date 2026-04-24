@@ -147,9 +147,12 @@ export const DirectionA = ({ palette, fontPair, heroVariant }) => {
                   </button>
                   {servicesOpen && (
                     <div style={{
-                      position: 'absolute', top: 'calc(100% + 8px)', left: '50%', transform: 'translateX(-50%)',
+                      position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)',
+                      paddingTop: 8, zIndex: 200,
+                    }}>
+                    <div style={{
                       background: palette.surface, border: `1.5px solid ${palette.ink}`, borderRadius: 16,
-                      padding: 8, minWidth: 260, boxShadow: `4px 4px 0 ${palette.ink}`, zIndex: 200,
+                      padding: 8, minWidth: 260, boxShadow: `4px 4px 0 ${palette.ink}`,
                     }}>
                       {SERVICE_NAV.map((svc) => {
                         const active = page === `service:${svc.id}`
@@ -178,6 +181,7 @@ export const DirectionA = ({ palette, fontPair, heroVariant }) => {
                           View all services →
                         </button>
                       </div>
+                    </div>
                     </div>
                   )}
                 </div>
