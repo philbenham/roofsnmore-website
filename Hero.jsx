@@ -4,13 +4,13 @@ const Hero = () => (
     background: 'var(--rnm-cream)',
     borderBottom: '2.5px solid var(--rnm-ink)',
     overflow: 'hidden',
-  }}>
-    <div style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.15fr 1fr', gap: 56, alignItems: 'center' }}>
+  }} className="rnm-hero-section">
+    <div className="rnm-hero-grid" style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.15fr 1fr', gap: 56, alignItems: 'center' }}>
       <div>
         <div style={{ display: 'inline-block', background: 'var(--rnm-orange)', color: '#fff', fontFamily: 'var(--rnm-font-display)', fontWeight: 600, fontSize: 14, padding: '6px 14px', borderRadius: 999, border: '2.5px solid var(--rnm-ink)', boxShadow: '3px 3px 0 var(--rnm-ink)', marginBottom: 24, transform: 'rotate(-2deg)', whiteSpace: 'nowrap' }}>
           Serving Greater Houston since 2015
         </div>
-        <h1 style={{ fontFamily: 'var(--rnm-font-display)', fontWeight: 700, fontSize: 68, lineHeight: 1.0, letterSpacing: '-0.01em', color: 'var(--rnm-ink)', margin: 0, marginBottom: 20 }}>
+        <h1 className="rnm-hero-h1" style={{ fontFamily: 'var(--rnm-font-display)', fontWeight: 700, fontSize: 68, lineHeight: 1.0, letterSpacing: '-0.01em', color: 'var(--rnm-ink)', margin: 0, marginBottom: 20 }}>
           Houston's favorite <span style={{ color: 'var(--rnm-blue)', position: 'relative', display: 'inline-block' }}>expert roofing
             <svg viewBox="0 0 340 14" style={{ position: 'absolute', bottom: -8, left: 0, width: '100%', height: 14 }}>
               <path d="M4 10 Q 80 2, 170 7 T 336 6" fill="none" stroke="var(--rnm-orange)" strokeWidth="5" strokeLinecap="round"/>
@@ -41,7 +41,12 @@ const Hero = () => (
       </div>
       <div style={{ position: 'relative', display: 'grid', placeItems: 'center', minHeight: 440 }}>
         <div style={{ position: 'absolute', inset: '8px 20px 40px 0', background: 'var(--rnm-blue-soft)', border: '3.5px solid var(--rnm-ink)', borderRadius: 28, boxShadow: '8px 10px 0 var(--rnm-ink)', transform: 'rotate(-2deg)', overflow: 'hidden' }}>
-          <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=800&q=80" alt="Residential roof in Houston" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img
+            src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=800&q=80"
+            srcSet="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=800&q=80 1x, https://images.unsplash.com/photo-1632759145351-1d592919f522?w=1600&q=80 2x"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="Residential roof in Houston"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
         <img src="assets/logo-mascot.png" alt="" style={{ position: 'absolute', bottom: -16, right: -8, width: 180, zIndex: 2, transform: 'rotate(6deg)' }} />
         <div style={{ position: 'absolute', top: 12, right: 16, zIndex: 3 }}>

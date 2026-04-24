@@ -71,6 +71,21 @@
   .tl-item .year { font-family: var(--rnm-font-display); font-weight: 700; font-size: 14px; color: var(--rnm-orange-dark); letter-spacing: 0.1em; text-transform: uppercase; }
   .tl-item h3 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 24px; margin: 4px 0 6px; }
   .tl-item p { font-size: 15px; line-height: 1.55; color: var(--rnm-ink-soft); margin: 0; max-width: 640px; }
+
+  @media (max-width: 768px) {
+    .story-grid { grid-template-columns: 1fr; gap: 28px; }
+    .story-grid .photo { display: none; }
+    .story-grid h2 { font-size: clamp(28px, 7vw, 44px); }
+    .values { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .crew { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .values { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .crew { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(2n), .stat:nth-child(3n) { transform: none; }
+  }
 </style>
 </head>
 <body data-screen-label="About Us">
@@ -98,6 +113,8 @@
   <div class="rnm-header-cta">
     <a class="phone" href="tel:8329910928">832-991-0928</a>
     <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  
+    <button class="rnm-nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
 </header>
 <script>
@@ -300,5 +317,6 @@
   </div>
 </footer>
 
+<script src="mobile-nav.js"></script>
 </body>
 </html>

@@ -35,3 +35,20 @@
 }
 .article .next h3 { margin: 0 0 4px; }
 .article .next p { margin: 0; font-size: 15px; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .article { padding: 40px 24px 64px; }
+  .article h1 { font-size: clamp(28px, 7vw, 44px); }
+}
+
+@media (max-width: 480px) {
+  .article { padding: 28px 16px 48px; }
+  .article h1 { font-size: 26px; }
+  .article .lead { font-size: 17px; }
+  .article .next { grid-template-columns: 1fr; }
+  .article .next .rnm-btn { width: 100%; justify-content: center; }
+}

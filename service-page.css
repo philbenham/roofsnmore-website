@@ -74,3 +74,31 @@
 .faq summary::after { content: "+"; font-size: 28px; color: var(--rnm-orange-dark); transition: transform 180ms; }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq details p { font-size: 15px; color: var(--rnm-ink-soft); line-height: 1.55; margin: 12px 0 0; }
+
+/* ============================================================
+   Responsive breakpoints
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .svc-hero { padding: 36px 24px 48px; }
+  .svc-hero .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .svc-hero h1 { font-size: clamp(30px, 7vw, 52px); }
+  .svc-hero .visual { display: none; }
+
+  .spec-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .pricing-table { grid-template-columns: 1fr; }
+  .tier.popular { transform: none; }
+}
+
+@media (max-width: 480px) {
+  .svc-hero { padding: 28px 16px 36px; }
+  .svc-hero h1 { font-size: 28px; }
+
+  .spec-grid { grid-template-columns: 1fr; }
+  .spec:nth-child(2), .spec:nth-child(3) { transform: none; }
+
+  .process-item { grid-template-columns: 48px 1fr; gap: 14px; padding: 16px 18px; }
+
+  .faq summary { font-size: 16px; }
+}

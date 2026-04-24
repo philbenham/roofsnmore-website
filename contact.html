@@ -46,6 +46,14 @@
     position: relative; overflow: hidden; margin-top: 20px;
   }
   .map::after { content: "Kemah, TX · 832-991-0928"; position: absolute; bottom: 16px; left: 16px; background: #fff; border: 2.5px solid var(--rnm-ink); padding: 6px 14px; border-radius: 8px; font-family: var(--rnm-font-display); font-weight: 600; font-size: 14px; box-shadow: 3px 3px 0 var(--rnm-ink); }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .cform { padding: 24px 20px; }
+    .cform .row.two { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body data-screen-label="Contact">
@@ -73,6 +81,8 @@
   <div class="rnm-header-cta">
     <a class="phone" href="tel:8329910928">832-991-0928</a>
     <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  
+    <button class="rnm-nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
 </header>
 <script>
@@ -190,5 +200,6 @@
   <div class="bottom"><div>© 2026 Roofs-N-More LLC</div><div>Made with hammers in Kemah, TX.</div></div>
 </footer>
 
+<script src="mobile-nav.js"></script>
 </body>
 </html>

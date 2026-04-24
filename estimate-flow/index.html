@@ -84,6 +84,16 @@
     main { grid-template-columns: 1fr; }
     aside { position: static; }
   }
+  @media (max-width: 480px) {
+    header.top { padding: 10px 16px; }
+    header.top .brand .name { font-size: 17px; }
+    header.top .brand img { width: 38px; height: 38px; }
+    header.top .phone span { display: none; }
+    .trust { padding: 10px 16px; gap: 16px; font-size: 13px; }
+    main { padding: 20px 16px 40px; }
+    .intro h1 { font-size: 26px; }
+    .iframe-wrap iframe { height: 600px; }
+  }
 </style>
 </head>
 <body data-screen-label="Estimate flow (iframe host)">

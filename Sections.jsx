@@ -21,10 +21,10 @@ const TrustStrip = () => {
 
 const Services = () => {
   const items = [
-    { icon: 'home',   title: 'Roof Replacement',       body: 'Full residential roof replacements using top-rated materials. We handle everything from tear-off to final inspection — no surprises.', img: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=640&q=80', href: 'roofing.html' },
-    { icon: 'shield', title: 'Energy-Efficient Siding', body: "Modern insulated siding that beautifies your home AND cuts your energy bills. Built for Houston's climate.", img: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=640&q=80', href: 'siding.html' },
-    { icon: 'home',   title: 'Energy-Efficient Windows', body: 'Replace drafty old windows with high-performance units that keep the Texas heat out and your cool air in.', img: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=640&q=80', href: 'windows.html' },
-    { icon: 'storm',  title: 'Gutter Installation',    body: 'Protect your foundation and landscaping with seamless gutters that channel water away from your home.', img: 'https://images.unsplash.com/photo-1597047084897-51e81819a499?w=640&q=80', href: 'gutters.html' },
+    { icon: 'home',   title: 'Roof Replacement',       body: 'Full residential roof replacements using top-rated materials. We handle everything from tear-off to final inspection — no surprises.', img: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=640&q=80', img2x: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1280&q=80', href: 'roofing.html' },
+    { icon: 'shield', title: 'Energy-Efficient Siding', body: "Modern insulated siding that beautifies your home AND cuts your energy bills. Built for Houston's climate.", img: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=640&q=80', img2x: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1280&q=80', href: 'siding.html' },
+    { icon: 'home',   title: 'Energy-Efficient Windows', body: 'Replace drafty old windows with high-performance units that keep the Texas heat out and your cool air in.', img: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=640&q=80', img2x: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1280&q=80', href: 'windows.html' },
+    { icon: 'storm',  title: 'Gutter Installation',    body: 'Protect your foundation and landscaping with seamless gutters that channel water away from your home.', img: 'https://images.unsplash.com/photo-1597047084897-51e81819a499?w=640&q=80', img2x: 'https://images.unsplash.com/photo-1597047084897-51e81819a499?w=1280&q=80', href: 'gutters.html' },
   ];
   return (
     <section id="services" style={{ padding: '96px 32px', background: 'var(--rnm-cream)' }}>
@@ -32,7 +32,7 @@ const Services = () => {
         <div style={{ fontFamily: 'var(--rnm-font-body)', fontWeight: 900, fontSize: 14, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--rnm-orange-dark)', marginBottom: 12 }}>WHAT WE DO</div>
         <h2 style={{ fontFamily: 'var(--rnm-font-display)', fontWeight: 700, fontSize: 52, lineHeight: 1.05, margin: '0 0 12px', maxWidth: 760 }}>Our home exterior services.</h2>
         <p style={{ fontFamily: 'var(--rnm-font-body)', fontWeight: 600, fontSize: 18, color: 'var(--rnm-ink-soft)', maxWidth: 680, margin: '0 0 48px' }}>Four core services designed to protect your home and boost its curb appeal — all done by our trained, friendly crew.</p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
+        <div className="rnm-services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
           {items.map((s, i) => (
             <div key={s.title} style={{
               background: '#fff', border: '3px solid var(--rnm-ink)', borderRadius: 24,
@@ -40,7 +40,7 @@ const Services = () => {
               transform: `rotate(${[-0.8, 0.5, 0.8, -0.5][i]}deg)`,
             }}>
               <div style={{ height: 170, overflow: 'hidden', borderBottom: '3px solid var(--rnm-ink)', background: 'var(--rnm-blue-soft)' }}>
-                <img src={s.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={e => { e.target.style.display = 'none'; }} />
+                <img src={s.img} srcSet={`${s.img} 1x, ${s.img2x} 2x`} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={e => { e.target.style.display = 'none'; }} />
               </div>
               <div style={{ padding: '24px 28px 26px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 10 }}>
@@ -69,7 +69,7 @@ const ProofStrip = () => {
   ];
   return (
     <section style={{ background: 'var(--rnm-blue)', padding: '56px 32px', borderTop: '3px solid var(--rnm-ink)', borderBottom: '3px solid var(--rnm-ink)' }}>
-      <div style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+      <div className="rnm-proof-grid" style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
         {stats.map(s => (
           <div key={s.l} style={{ textAlign: 'center', color: '#fff' }}>
             <div style={{ fontFamily: 'var(--rnm-font-display)', fontWeight: 700, fontSize: 64, lineHeight: 1 }}>{s.n}</div>
@@ -93,7 +93,7 @@ const Testimonials = () => {
         <div style={{ fontFamily: 'var(--rnm-font-body)', fontWeight: 900, fontSize: 14, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--rnm-orange-dark)', marginBottom: 12 }}>REAL REVIEWS</div>
         <h2 style={{ fontFamily: 'var(--rnm-font-display)', fontWeight: 700, fontSize: 52, margin: '0 0 12px', maxWidth: 720, lineHeight: 1.05 }}>What our customers are saying.</h2>
         <p style={{ fontFamily: 'var(--rnm-font-body)', fontWeight: 600, fontSize: 18, color: 'var(--rnm-ink-soft)', maxWidth: 620, margin: '0 0 48px' }}>Don't just take our word for it — hear from homeowners across the Houston area.</p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <div className="rnm-testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {quotes.map((t, i) => (
             <div key={t.by} style={{
               background: '#fff', border: '3px solid var(--rnm-ink)', borderRadius: 24,
@@ -123,7 +123,7 @@ const ServiceArea = () => {
   const cities = ['Houston', 'League City', 'Friendswood', 'Pearland', 'Kemah', 'Webster', 'Clear Lake', 'Seabrook', 'La Marque', 'Galveston', 'Pasadena', 'Alvin', 'Deer Park'];
   return (
     <section style={{ padding: '80px 32px', background: 'var(--rnm-cream)' }}>
-      <div style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 56, alignItems: 'center' }}>
+      <div className="rnm-area-grid" style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 56, alignItems: 'center' }}>
         <div>
           <div style={{ fontFamily: 'var(--rnm-font-body)', fontWeight: 900, fontSize: 14, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--rnm-orange-dark)', marginBottom: 12 }}>WE COME TO YOU</div>
           <h2 style={{ fontFamily: 'var(--rnm-font-display)', fontWeight: 700, fontSize: 44, lineHeight: 1.05, margin: '0 0 14px' }}>Serving the Greater Houston area.</h2>
@@ -164,7 +164,7 @@ const EstimateCTA = () => (
 
 const Footer = () => (
   <footer style={{ background: 'var(--rnm-ink)', color: '#fff', padding: '56px 32px 32px' }}>
-    <div style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr 1fr', gap: 40 }}>
+    <div className="rnm-footer-grid" style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr 1fr', gap: 40 }}>
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
           <img src="assets/logo-mascot.png" alt="" style={{ width: 52, height: 52, background: '#fff', borderRadius: 12, padding: 3 }} />

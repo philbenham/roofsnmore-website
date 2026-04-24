@@ -99,6 +99,18 @@
   .why h4 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 20px; margin: 0 0 10px; display: flex; gap: 10px; align-items: center; }
   .why h4 svg { color: var(--rnm-orange); }
   .why p { font-size: 15px; color: var(--rnm-ink-soft); line-height: 1.55; margin: 0; }
+
+  @media (max-width: 768px) {
+    .svc-grid { grid-template-columns: 1fr; }
+    .how { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .svc-card { grid-template-rows: 160px auto; }
+    .how { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .step:nth-child(2n), .step:nth-child(2n+1) { transform: none; }
+  }
 </style>
 </head>
 <body data-screen-label="Services">
@@ -126,6 +138,8 @@
   <div class="rnm-header-cta">
     <a class="phone" href="tel:8329910928">832-991-0928</a>
     <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  
+    <button class="rnm-nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
 </header>
 <script>
@@ -268,5 +282,6 @@
   <div class="bottom"><div>© 2026 Roofs-N-More LLC · Licensed &amp; insured</div><div>Made with hammers in Kemah, TX.</div></div>
 </footer>
 
+<script src="mobile-nav.js"></script>
 </body>
 </html>

@@ -49,6 +49,15 @@
 
   .cv-f { background: var(--rnm-sand); position: relative; }
   .cv-f::before { content: ""; position: absolute; top: 35%; left: 15%; right: 15%; height: 22px; background: var(--rnm-orange); border: 3px solid var(--rnm-ink); border-radius: 0 0 12px 12px; box-shadow: 4px 4px 0 var(--rnm-ink); }
+
+  @media (max-width: 768px) {
+    .featured { grid-template-columns: 1fr; }
+    .featured h2 { font-size: clamp(24px, 6vw, 36px); }
+    .posts { grid-template-columns: 1fr 1fr; gap: 20px; }
+  }
+  @media (max-width: 480px) {
+    .posts { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body data-screen-label="Blog">
@@ -76,6 +85,8 @@
   <div class="rnm-header-cta">
     <a class="phone" href="tel:8329910928">832-991-0928</a>
     <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  
+    <button class="rnm-nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
 </header>
 <script>
@@ -199,5 +210,6 @@
   <div class="bottom"><div>© 2026 Roofs-N-More LLC · Licensed &amp; insured</div><div>Made with hammers in Kemah, TX.</div></div>
 </footer>
 
+<script src="mobile-nav.js"></script>
 </body>
 </html>

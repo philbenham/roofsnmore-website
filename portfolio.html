@@ -81,6 +81,13 @@
   .cv-full { background: linear-gradient(var(--rnm-blue-soft) 40%, var(--rnm-cream) 40%); position: relative; }
   .cv-full::before { content: ""; position: absolute; left: 50%; top: 10%; transform: translateX(-50%); width: 0; height: 0; border-left: 160px solid transparent; border-right: 160px solid transparent; border-bottom: 100px solid var(--rnm-orange); filter: drop-shadow(3px 4px 0 var(--rnm-ink)); }
   .cv-full::after { content: ""; position: absolute; top: calc(10% + 100px); left: 20%; right: 20%; bottom: 15%; background: repeating-linear-gradient(to bottom, var(--rnm-blue) 0 18px, var(--rnm-blue-dark) 18px 20px, var(--rnm-blue) 20px 38px); border: 3px solid var(--rnm-ink); border-radius: 6px 6px 0 0; }
+
+  @media (max-width: 768px) {
+    .gallery { grid-template-columns: 1fr 1fr; gap: 20px; }
+  }
+  @media (max-width: 480px) {
+    .gallery { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body data-screen-label="Portfolio">
@@ -108,6 +115,8 @@
   <div class="rnm-header-cta">
     <a class="phone" href="tel:8329910928">832-991-0928</a>
     <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+  
+    <button class="rnm-nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
 </header>
 <script>
@@ -307,5 +316,6 @@
   });
 </script>
 
+<script src="mobile-nav.js"></script>
 </body>
 </html>
