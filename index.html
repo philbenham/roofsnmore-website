@@ -24,6 +24,7 @@
   .hero-callout { position:absolute; top:12px; right:16px; z-index:3; background:#fff; border:2.5px solid var(--rnm-ink); border-radius:16px; padding:10px 14px; box-shadow:4px 5px 0 var(--rnm-ink); transform:rotate(4deg); }
   .hero-callout .hand { font-family:var(--rnm-font-hand); font-weight:700; font-size:22px; color:var(--rnm-orange-dark); display:block; transform:rotate(0deg); }
   .hero-callout .phone-num { font-family:var(--rnm-font-display); font-weight:700; font-size:14px; margin-top:2px; }
+  #hero-phrase { transition: opacity 0.4s ease; }
 
   /* Services */
   .svc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
@@ -97,10 +98,10 @@
       <a href="services.html" id="svc-trigger">Services &#9662;</a>
       <div class="dropdown-panel" id="svc-panel" style="display:none">
         <div class="dropdown-panel-inner">
-          <a href="roofing.html">Roof Replacement</a>
-          <a href="siding.html">Energy-Efficient Siding</a>
-          <a href="windows.html">Energy-Efficient Windows</a>
-          <a href="gutters.html">Gutter Installation</a>
+          <a href="roofing.html">Roofs</a>
+          <a href="siding.html">Siding</a>
+          <a href="windows.html">Windows</a>
+          <a href="gutters.html">Gutters</a>
         </div>
       </div>
     </div>
@@ -149,7 +150,7 @@
   <div class="rnm-hero-grid" style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center;">
     <div>
       <div class="hero-badge">Serving Greater Houston since 2015</div>
-      <h1 class="hero-h1">Houston's favorite <span class="accent">expert roofing<svg viewBox="0 0 340 14"><path d="M4 10 Q 80 2, 170 7 T 336 6" fill="none" stroke="var(--rnm-orange)" stroke-width="5" stroke-linecap="round"/></svg></span> crew.</h1>
+      <h1 class="hero-h1">Houston's favorite <span class="accent" id="hero-phrase">expert roof<svg viewBox="0 0 340 14"><path d="M4 10 Q 80 2, 170 7 T 336 6" fill="none" stroke="var(--rnm-orange)" stroke-width="5" stroke-linecap="round"/></svg></span> crew.</h1>
       <p class="hero-lead">Roofing, siding, windows, and gutters — done right by trained, friendly neighbors. Get an instant price range with our free AI estimator, no phone calls or personal info needed.</p>
       <div class="hero-actions">
         <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn lg">Free AI instant estimate <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></a>
@@ -161,16 +162,16 @@
     </div>
     <div class="hero-photo-wrap">
       <div class="hero-photo">
-        <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=800&q=80"
-             srcset="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=800&q=80 1x, https://images.unsplash.com/photo-1632759145351-1d592919f522?w=1600&q=80 2x"
+        <img src="assets/hero-roof.png"
+             srcset="assets/hero-roof.png 1x, assets/hero-roof.png 2x"
              sizes="(max-width:768px) 100vw, 50vw"
              alt="Residential roof in Houston" />
       </div>
       <img src="assets/logo-mascot.png" alt="" class="hero-mascot" />
-      <div class="hero-callout">
-        <span class="hand">we pick up!</span>
+      <a href="tel:8329910928" style="text-decoration:none;color:inherit;"><div class="hero-callout">
+        <span class="hand">Call Today!</span>
         <div class="phone-num">832-991-0928</div>
-      </div>
+      </div></a>
     </div>
   </div>
 </section>
@@ -193,7 +194,7 @@
     <p class="lead">Four core services designed to protect your home and boost its curb appeal — all done by our trained, friendly crew.</p>
     <div class="svc-grid rnm-services-grid">
       <a href="roofing.html" class="svc-card">
-        <div class="svc-card-img"><img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=640&q=80" srcset="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=640&q=80 1x, https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1280&q=80 2x" alt="" /></div>
+        <div class="svc-card-img"><img src="assets/new-roof.jpg" srcset="assets/new-roof.jpg 1x, assets/new-roof.jpg 2x" alt="" /></div>
         <div class="svc-card-body">
           <div class="svc-card-title-row">
             <div class="svc-card-icon" style="background:var(--rnm-orange)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8 8-3-3 8-8"/><path d="M12 9l7-7 3 3-7 7z"/><path d="M12 9l3 3"/></svg></div>
@@ -204,7 +205,7 @@
         </div>
       </a>
       <a href="siding.html" class="svc-card">
-        <div class="svc-card-img"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=640&q=80" srcset="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=640&q=80 1x, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1280&q=80 2x" alt="" /></div>
+        <div class="svc-card-img"><img src="assets/vinyl-siding.webp" srcset="assets/vinyl-siding.webp 1x, assets/vinyl-siding.webp 2x" alt="" /></div>
         <div class="svc-card-body">
           <div class="svc-card-title-row">
             <div class="svc-card-icon" style="background:var(--rnm-blue)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3z"/><path d="M9 12l2 2 4-4"/></svg></div>
@@ -215,7 +216,7 @@
         </div>
       </a>
       <a href="windows.html" class="svc-card">
-        <div class="svc-card-img"><img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=640&q=80" srcset="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=640&q=80 1x, https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1280&q=80 2x" alt="" /></div>
+        <div class="svc-card-img"><img src="assets/new-windows.webp" srcset="assets/new-windows.webp 1x, assets/new-windows.webp 2x" alt="" /></div>
         <div class="svc-card-body">
           <div class="svc-card-title-row">
             <div class="svc-card-icon" style="background:var(--rnm-orange)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 3l9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div>
@@ -226,7 +227,7 @@
         </div>
       </a>
       <a href="gutters.html" class="svc-card">
-        <div class="svc-card-img"><img src="https://images.unsplash.com/photo-1597047084897-51e81819a499?w=640&q=80" srcset="https://images.unsplash.com/photo-1597047084897-51e81819a499?w=640&q=80 1x, https://images.unsplash.com/photo-1597047084897-51e81819a499?w=1280&q=80 2x" alt="" /></div>
+        <div class="svc-card-img"><img src="assets/gutters.jpg" srcset="assets/gutters.jpg 1x, assets/gutters.jpg 2x" alt="" /></div>
         <div class="svc-card-body">
           <div class="svc-card-title-row">
             <div class="svc-card-icon" style="background:var(--rnm-blue)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 16.9A5 5 0 0018 7h-1.3A8 8 0 104 15"/><path d="M13 11l-4 6h3l-1 4 4-6h-3l1-4z"/></svg></div>
@@ -323,7 +324,7 @@
 <footer class="rnm-footer">
   <div class="wrap">
     <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew. Roofing, siding, windows, and gutters — done right.</p></div>
-    <div><h4>Services</h4><ul><li><a href="roofing.html">Roof Replacement</a></li><li><a href="siding.html">Energy Siding</a></li><li><a href="windows.html">Energy Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roofs</a></li><li><a href="siding.html">Energy Siding</a></li><li><a href="windows.html">Energy Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
     <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>437 Holly Branch Ln</li><li>Kemah, TX 77565</li><li>Mon–Fri 8am–6pm</li><li>Sat 9am–3pm</li></ul></div>
   </div>
@@ -331,5 +332,21 @@
 </footer>
 
 <script src="mobile-nav.js"></script>
+<script>
+(function(){
+  var phrases = ['expert roof','gutter install','new windows','pro siding'];
+  var el = document.getElementById('hero-phrase');
+  var svg = el.querySelector('svg');
+  var i = 0;
+  setInterval(function(){
+    i = (i + 1) % phrases.length;
+    el.style.opacity = '0';
+    setTimeout(function(){
+      el.firstChild.textContent = phrases[i];
+      el.style.opacity = '1';
+    }, 400);
+  }, 5000);
+})();
+</script>
 </body>
 </html>
