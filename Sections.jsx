@@ -185,6 +185,7 @@ const Footer = () => (
           { label: 'Blog', href: 'blog.html' },
           { label: 'Contact', href: 'contact.html' },
           { label: 'Privacy Policy', href: 'privacy-policy.html' },
+          { label: 'Terms & Conditions', href: 'terms-and-conditions.html' },
         ]},
         { t: 'Contact', l: [
           { label: '832-991-0928', href: 'tel:8329910928' },
