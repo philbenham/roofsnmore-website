@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Residential Concrete — Roofs-N-More</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="service-page.css">
+<style>
+  .concrete-visual {
+    background: #D6D2CC;
+    background-image:
+      linear-gradient(var(--rnm-ink) 0, var(--rnm-ink) 3px, transparent 3px, transparent calc(50% - 1.5px), var(--rnm-ink) calc(50% - 1.5px), var(--rnm-ink) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+      linear-gradient(90deg, var(--rnm-ink) 0, var(--rnm-ink) 3px, transparent 3px, transparent calc(50% - 1.5px), var(--rnm-ink) calc(50% - 1.5px), var(--rnm-ink) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+    background-size: 100% 100%;
+    position: relative;
+  }
+  .concrete-visual::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    background: #C8C4BC;
+    border: 3px solid var(--rnm-ink);
+    border-radius: 10px;
+    box-shadow: 5px 6px 0 var(--rnm-ink);
+    background-image:
+      linear-gradient(rgba(0,0,0,0.12) 0, rgba(0,0,0,0.12) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(0,0,0,0.12) 0, rgba(0,0,0,0.12) 2px, transparent 2px);
+    background-size: 50% 33.33%;
+  }
+</style>
+</head>
+<body data-screen-label="Concrete">
+
+<header class="rnm-header">
+  <a class="brand" href="index.html"><img src="assets/logo-mascot.png" alt="" /><div><div class="name">Roofs-N-More</div><div class="sub">Kemah, TX · Fully Insured</div></div></a>
+  <nav class="rnm-nav">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="svc-dropdown">
+      <a href="services.html" id="svc-trigger">Services &#9662;</a>
+      <div class="dropdown-panel" id="svc-panel" style="display:none">
+        <div class="dropdown-panel-inner">
+          <a href="roofing.html">Roofs</a>
+          <a href="siding.html">Siding</a>
+          <a href="windows.html">Windows</a>
+          <a href="gutters.html">Gutters</a>
+          <a href="concrete.html">Concrete</a>
+        </div>
+      </div>
+    </div>
+    <a href="about-us.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="rnm-header-cta">
+    <a class="phone" href="tel:8329910928">832-991-0928</a>
+    <a class="rnm-btn sm" href="https://quote.roofsnmore.com/s/59b06a">Free AI estimate</a>
+
+    <button class="rnm-nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+</header>
+<script>
+(function(){
+  var dd = document.getElementById('svc-dropdown');
+  var panel = document.getElementById('svc-panel');
+  var timer;
+  function show(){ clearTimeout(timer); panel.style.display = 'block'; }
+  function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
+  dd.addEventListener('mouseenter', show);
+  dd.addEventListener('mouseleave', hide);
+  panel.addEventListener('mouseenter', show);
+  panel.addEventListener('mouseleave', hide);
+})();
+</script>
+
+<section class="svc-hero">
+  <div class="wrap">
+    <div>
+      <div class="rnm-eyebrow">Residential concrete</div>
+      <h1>Driveways, patios &amp; flatwork done right.</h1>
+      <p class="lead">Houston's heat, humidity, and clay soil are tough on concrete — but when it's poured and finished correctly, a residential slab lasts decades. We do it right the first time so you're not calling anyone back.</p>
+      <div class="actions">
+        <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn lg">Free AI instant estimate</a>
+        <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+      </div>
+      <div class="proof">
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Kemah-based crew</div>
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Fully insured</div>
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Free estimates</div>
+      </div>
+    </div>
+    <div class="visual concrete-visual"><span class="hero-pill">Seabrook, TX · Mar 2025</span></div>
+  </div>
+</section>
+
+<section class="rnm-section white">
+  <div class="wrap">
+    <div class="rnm-eyebrow">What we pour</div>
+    <h2>Three types of residential concrete work we do.</h2>
+    <div class="spec-grid">
+      <div class="spec">
+        <h4>Driveways &amp; aprons</h4>
+        <p>Reinforced, properly graded driveways built to handle Houston's expanding clay soil. We include expansion joints, rebar or wire mesh, and a clean brushed or broom finish.</p>
+        <ul><li>Rebar + wire mesh reinforced</li><li>Expansion joints every 10 ft</li><li>Standard or exposed aggregate finish</li></ul>
+      </div>
+      <div class="spec">
+        <h4>Patios &amp; outdoor slabs</h4>
+        <p>Flatwork for backyard patios, walkways, sidewalks, and pool decks. We handle grading, forming, and finishing so the slab drains correctly and looks clean for years.</p>
+        <ul><li>Proper slope for drainage</li><li>Pool deck &amp; patio surrounds</li><li>Walkways &amp; front entries</li></ul>
+      </div>
+      <div class="spec">
+        <h4>Decorative &amp; stamped</h4>
+        <p>Add texture, pattern, or color to make your driveway or patio stand out. Stamped concrete gives you the look of stone, brick, or wood grain at a fraction of the cost.</p>
+        <ul><li>Stamped patterns &amp; textures</li><li>Integral &amp; surface color</li><li>Exposed aggregate options</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-section sky">
+  <div class="wrap">
+    <div class="rnm-eyebrow">How a concrete job goes</div>
+    <h2>Five steps from estimate to finished slab.</h2>
+    <div class="process-list">
+      <div class="process-item"><div class="n">1</div><div><h4>Free estimate</h4><p>Get a ballpark online or call us. We come out, measure the area, check grade and drainage, and give you a written price before anything starts.</p></div></div>
+      <div class="process-item"><div class="n">2</div><div><h4>Site prep &amp; forming</h4><p>Existing concrete or material is removed if needed. We grade the subbase, compact it, and set forms to the correct height and slope.</p></div></div>
+      <div class="process-item"><div class="n">3</div><div><h4>Rebar &amp; wire mesh</h4><p>Steel reinforcement goes in before the pour — rebar grid or wire mesh depending on the slab type. This is what keeps the concrete from shifting and cracking apart.</p></div></div>
+      <div class="process-item"><div class="n">4</div><div><h4>Pour &amp; finish</h4><p>Concrete is placed, screeded flat, floated, and finished to the agreed texture. Expansion joints are cut or placed to control where the slab breathes.</p></div></div>
+      <div class="process-item"><div class="n">5</div><div><h4>Cure &amp; seal</h4><p>Fresh concrete is protected during the cure period. Once cured, we apply a penetrating sealer that protects against moisture, stains, and Houston's UV.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-section white">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Ballpark pricing</div>
+    <h2>What residential concrete costs in Houston.</h2>
+    <p class="lead">Concrete pricing depends on square footage, thickness, reinforcement, and finish. These ranges are starting points — your free written estimate will nail down the exact number.</p>
+    <div class="pricing-table">
+      <div class="tier">
+        <div class="name">Small patio or walkway</div>
+        <div class="blurb">Up to ~200 sq ft</div>
+        <div class="price">$2–5k</div>
+        <div class="price-suffix">formed, poured &amp; finished</div>
+        <ul>
+          <li>4" slab, wire mesh reinforced</li>
+          <li>Broom or brushed finish</li>
+          <li>Expansion joints included</li>
+          <li>Sealer applied</li>
+        </ul>
+        <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn ghost">Get exact price</a>
+      </div>
+      <div class="tier popular">
+        <div class="name">Standard driveway</div>
+        <div class="blurb">~400–800 sq ft, single or double</div>
+        <div class="price">$4–9k</div>
+        <div class="price-suffix">most common project</div>
+        <ul>
+          <li>4–5" slab, rebar reinforced</li>
+          <li>Proper grading &amp; drainage</li>
+          <li>Broom, brushed, or light stamp</li>
+          <li>Apron &amp; street tie-in included</li>
+        </ul>
+        <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn">Get exact price</a>
+      </div>
+      <div class="tier">
+        <div class="name">Large or decorative project</div>
+        <div class="blurb">Pool deck, stamped patio, large drive</div>
+        <div class="price">$8k+</div>
+        <div class="price-suffix">stamped, colored, or oversize</div>
+        <ul>
+          <li>Stamped patterns &amp; integral color</li>
+          <li>Pool surrounds &amp; large patios</li>
+          <li>Custom borders &amp; inlays</li>
+          <li>Premium penetrating sealer</li>
+        </ul>
+        <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn ghost">Get exact price</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-section sky">
+  <div class="wrap">
+    <div class="rnm-eyebrow">Common questions</div>
+    <h2>Stuff people ask about concrete.</h2>
+    <div class="faq">
+      <details open>
+        <summary>How long does concrete take to cure?</summary>
+        <p>Concrete reaches about 70% of its strength in the first week and full strength at 28 days. You can walk on it after 24–48 hours and drive on it after 7 days. We'll give you exact timing in writing based on weather conditions during your pour.</p>
+      </details>
+      <details>
+        <summary>Can you pour concrete in Houston's summer heat?</summary>
+        <p>Yes, but it takes extra care. Hot weather accelerates the cure too fast, which can lead to surface cracking. We pour in the early morning when temps are lower, add ice to the mix if needed, and use curing blankets and misting to slow things down. Most Houston contractors skip these steps — we don't.</p>
+      </details>
+      <details>
+        <summary>What's the price difference between stamped and plain concrete?</summary>
+        <p>Stamped concrete typically runs 30–50% more than plain broom-finished work, depending on pattern complexity and color. The base pour is the same — the extra cost is in the stamping tools, release agents, and sealer. It's worth it for a patio or front entry that you see every day.</p>
+      </details>
+      <details>
+        <summary>Do you do concrete repairs or resurfacing?</summary>
+        <p>We focus on full pours — new driveways, patios, and flatwork — rather than small patch repairs. If your existing slab has widespread cracking or heaving from tree roots or clay soil movement, replacement usually makes more sense than patching anyway. We'll give you an honest assessment on your free estimate visit.</p>
+      </details>
+      <details>
+        <summary>Will my concrete crack eventually?</summary>
+        <p>Almost all concrete develops some cracking over time — that's normal and expected. The goal is to control where it cracks (through expansion and control joints) and prevent structural cracking from poor reinforcement or subbase prep. Concrete poured without proper reinforcement, grading, or joints will crack badly. Ours won't.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="rnm-cta">
+  <div class="wrap">
+    <img src="assets/logo-mascot.png" alt="" class="mascot"/>
+    <h2>Ready to get a real number on your concrete?</h2>
+    <p>Use our free AI estimating tool to get a quick ballpark — or call Phil directly. No pressure either way.</p>
+    <div class="actions">
+      <a href="https://quote.roofsnmore.com/s/59b06a" class="rnm-btn ink lg">Free AI instant estimate</a>
+      <a href="tel:8329910928" class="rnm-btn ghost lg">Call 832-991-0928</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rnm-footer">
+  <div class="wrap">
+    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew. Roofing, siding, windows, gutters, and concrete — done right.</p></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roofs</a></li><li><a href="siding.html">Siding</a></li><li><a href="windows.html">Windows</a></li><li><a href="gutters.html">Gutters</a></li><li><a href="concrete.html">Concrete</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>437 Holly Branch Ln</li><li>Kemah, TX 77565</li><li>Mon–Fri 8am–6pm</li><li>Sat 9am–3pm</li></ul></div>
+  </div>
+  <div class="bottom"><div>© 2026 Roofs-N-More LLC · Fully insured</div><div>Made with hammers in Kemah, TX.</div></div>
+</footer>
+
+<script src="mobile-nav.js"></script>
+</body>
+</html>

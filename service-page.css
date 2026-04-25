@@ -13,6 +13,13 @@
 .svc-hero .proof .chip { font-family: var(--rnm-font-display); font-weight: 600; font-size: 14px; display: inline-flex; gap: 8px; align-items: center; }
 .svc-hero .proof .chip svg { color: var(--rnm-success); }
 .svc-hero .visual { border: 3.5px solid var(--rnm-ink); border-radius: 28px; box-shadow: 6px 8px 0 var(--rnm-ink); aspect-ratio: 4/3; position: relative; overflow: hidden; }
+.hero-pill {
+  position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+  background: var(--rnm-orange); color: #fff;
+  font-family: var(--rnm-font-display); font-weight: 600; font-size: 13px;
+  padding: 6px 18px; border: 2.5px solid var(--rnm-ink); border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--rnm-ink); white-space: nowrap; z-index: 2;
+}
 
 .spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
 .spec { padding: 28px; border: 3px solid var(--rnm-ink); border-radius: 20px; background: #fff; box-shadow: 4px 5px 0 var(--rnm-ink); }

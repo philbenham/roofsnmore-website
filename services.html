@@ -86,6 +86,18 @@
     border-top: 3px solid var(--rnm-ink);
   }
 
+  .cover-concrete { background: #D0CBC3; position: relative; display: grid; place-items: center; }
+  .cover-concrete::before {
+    content: ""; width: 200px; height: 140px;
+    background: #BDB8B0;
+    border: 3.5px solid var(--rnm-ink); border-radius: 8px;
+    box-shadow: 5px 6px 0 var(--rnm-ink);
+    background-image:
+      linear-gradient(rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 2px, transparent 2px);
+    background-size: 50% 33.33%;
+  }
+
   .how { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .step { text-align: center; padding: 28px 20px; border: 3px solid var(--rnm-ink); border-radius: 20px; background: #fff; box-shadow: 4px 5px 0 var(--rnm-ink); position: relative; }
   .step:nth-child(2n) { background: var(--rnm-sky); transform: rotate(-1deg); }
@@ -127,6 +139,7 @@
           <a href="siding.html">Siding</a>
           <a href="windows.html">Windows</a>
           <a href="gutters.html">Gutters</a>
+          <a href="concrete.html">Concrete</a>
         </div>
       </div>
     </div>
@@ -158,8 +171,8 @@
 <section class="rnm-page-hero">
   <div class="wrap">
     <div class="rnm-eyebrow">Everything we do</div>
-    <h1>Four services.<br/>One crew that owns it.</h1>
-    <p class="lead">Roofs, siding, windows, gutters — the whole exterior. When one crew handles all of it, the flashings line up, the warranties stack, and nothing gets blamed on "the other guys."</p>
+    <h1>Five services.<br/>One crew that owns it.</h1>
+    <p class="lead">Roofs, siding, windows, gutters, concrete — the whole exterior. When one crew handles all of it, the flashings line up, the warranties stack, and nothing gets blamed on "the other guys."</p>
   </div>
 </section>
 
@@ -218,6 +231,19 @@
           <span class="arrow">Gutters details →</span>
         </div>
       </a>
+      <a href="concrete.html" class="svc-card">
+        <div class="cover cover-concrete"></div>
+        <div class="body">
+          <h3>Residential Concrete</h3>
+          <p>Driveways, patios, walkways, and decorative flatwork — properly reinforced and finished to last in Houston's climate.</p>
+          <ul class="bullets">
+            <li>Driveways &amp; aprons — rebar reinforced</li>
+            <li>Patios, pool decks &amp; walkways</li>
+            <li>Stamped &amp; decorative finishes available</li>
+          </ul>
+          <span class="arrow">Concrete details →</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -273,8 +299,8 @@
 
 <footer class="rnm-footer">
   <div class="wrap">
-    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew. Roofing, siding, windows, and gutters — done right.</p></div>
-    <div><h4>Services</h4><ul><li><a href="roofing.html">Roofs</a></li><li><a href="siding.html">Energy Siding</a></li><li><a href="windows.html">Energy Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
+    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew. Roofing, siding, windows, gutters, and concrete — done right.</p></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roofs</a></li><li><a href="siding.html">Siding</a></li><li><a href="windows.html">Windows</a></li><li><a href="gutters.html">Gutters</a></li><li><a href="concrete.html">Concrete</a></li></ul></div>
     <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>437 Holly Branch Ln</li><li>Kemah, TX 77565</li><li>Mon–Fri 8am–6pm</li><li>Sat 9am–3pm</li></ul></div>
   </div>

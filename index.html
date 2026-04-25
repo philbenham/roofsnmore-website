@@ -42,6 +42,9 @@
   .svc-card:nth-child(2) { transform:rotate(0.5deg); }  .svc-card:nth-child(2):hover { transform:rotate(0.5deg) translate(-3px,-3px); }
   .svc-card:nth-child(3) { transform:rotate(0.8deg); }  .svc-card:nth-child(3):hover { transform:rotate(0.8deg) translate(-3px,-3px); }
   .svc-card:nth-child(4) { transform:rotate(-0.5deg); } .svc-card:nth-child(4):hover { transform:rotate(-0.5deg) translate(-3px,-3px); }
+  .svc-card:nth-child(5) { transform:rotate(0.6deg); }  .svc-card:nth-child(5):hover { transform:rotate(0.6deg) translate(-3px,-3px); }
+  .svc-card-img.concrete-img { background:#D0CBC3; display:grid; place-items:center; }
+  .svc-card-img.concrete-img::after { content:""; width:110px; height:76px; background:#BDB8B0; border:3px solid var(--rnm-ink); border-radius:6px; box-shadow:4px 4px 0 var(--rnm-ink); background-image:linear-gradient(rgba(0,0,0,0.15) 0,rgba(0,0,0,0.15) 2px,transparent 2px),linear-gradient(90deg,rgba(0,0,0,0.15) 0,rgba(0,0,0,0.15) 2px,transparent 2px); background-size:50% 33.33%; }
 
   /* ProofStrip */
   .proof-strip { background:var(--rnm-blue); padding:56px 32px; border-top:3px solid var(--rnm-ink); border-bottom:3px solid var(--rnm-ink); }
@@ -102,6 +105,7 @@
           <a href="siding.html">Siding</a>
           <a href="windows.html">Windows</a>
           <a href="gutters.html">Gutters</a>
+          <a href="concrete.html">Concrete</a>
         </div>
       </div>
     </div>
@@ -190,7 +194,7 @@
   <div class="wrap">
     <div class="rnm-eyebrow">What we do</div>
     <h2>Our home exterior services.</h2>
-    <p class="lead">Four core services designed to protect your home and boost its curb appeal — all done by our trained, friendly crew.</p>
+    <p class="lead">Five core services designed to protect your home and boost its curb appeal — all done by our trained, friendly crew.</p>
     <div class="svc-grid rnm-services-grid">
       <a href="roofing.html" class="svc-card">
         <div class="svc-card-img"><img src="assets/new-roof.jpg" srcset="assets/new-roof.jpg 1x, assets/new-roof.jpg 2x" alt="" /></div>
@@ -233,6 +237,17 @@
             <h3>Gutter Installation</h3>
           </div>
           <p>Protect your foundation and landscaping with seamless gutters that channel water away from your home.</p>
+          <span class="link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <a href="concrete.html" class="svc-card">
+        <div class="svc-card-img concrete-img"></div>
+        <div class="svc-card-body">
+          <div class="svc-card-title-row">
+            <div class="svc-card-icon" style="background:var(--rnm-orange)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 14V7a2 2 0 012-2h8a2 2 0 012 2v7"/><path d="M12 5V3"/></svg></div>
+            <h3>Residential Concrete</h3>
+          </div>
+          <p>Driveways, patios, walkways, and decorative flatwork — reinforced and finished to last in Houston's climate.</p>
           <span class="link">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
         </div>
       </a>
@@ -322,8 +337,8 @@
 <!-- Footer -->
 <footer class="rnm-footer">
   <div class="wrap">
-    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew. Roofing, siding, windows, and gutters — done right.</p></div>
-    <div><h4>Services</h4><ul><li><a href="roofing.html">Roofs</a></li><li><a href="siding.html">Energy Siding</a></li><li><a href="windows.html">Energy Windows</a></li><li><a href="gutters.html">Gutters</a></li></ul></div>
+    <div><div class="brand"><img src="assets/logo-mascot.png" alt=""><div class="name">Roofs-N-More</div></div><p class="desc">Houston's trusted home exterior crew. Roofing, siding, windows, gutters, and concrete — done right.</p></div>
+    <div><h4>Services</h4><ul><li><a href="roofing.html">Roofs</a></li><li><a href="siding.html">Siding</a></li><li><a href="windows.html">Windows</a></li><li><a href="gutters.html">Gutters</a></li><li><a href="concrete.html">Concrete</a></li></ul></div>
     <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-and-conditions.html">Terms</a></li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="tel:8329910928">832-991-0928</a></li><li>437 Holly Branch Ln</li><li>Kemah, TX 77565</li><li>Mon–Fri 8am–6pm</li><li>Sat 9am–3pm</li></ul></div>
   </div>
