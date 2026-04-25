@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /estimate-flow/
+
+Sitemap: https://roofsnmore.com/sitemap.xml

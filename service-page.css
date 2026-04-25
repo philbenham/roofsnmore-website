@@ -13,6 +13,7 @@
 .svc-hero .proof .chip { font-family: var(--rnm-font-display); font-weight: 600; font-size: 14px; display: inline-flex; gap: 8px; align-items: center; }
 .svc-hero .proof .chip svg { color: var(--rnm-success); }
 .svc-hero .visual { border: 3.5px solid var(--rnm-ink); border-radius: 28px; box-shadow: 6px 8px 0 var(--rnm-ink); aspect-ratio: 4/3; position: relative; overflow: hidden; }
+.visual-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-pill {
   position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
   background: var(--rnm-orange); color: #fff;
