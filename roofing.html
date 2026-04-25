@@ -6,20 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="colors_and_type.css">
 <link rel="stylesheet" href="site.css">
-<link rel="stylesheet" href="service-page.css">
+<link rel="stylesheet" href="service-page.css?v=2">
 <style>
-  .roof-visual { background: linear-gradient(to bottom, var(--rnm-blue-soft) 55%, #FFE4C4 55%); }
-  .roof-visual::before {
-    content: ""; position: absolute; left: 50%; top: 20%; transform: translateX(-50%);
-    width: 0; height: 0; border-left: 220px solid transparent; border-right: 220px solid transparent;
-    border-bottom: 140px solid var(--rnm-orange);
-    filter: drop-shadow(5px 6px 0 var(--rnm-ink));
-  }
-  .roof-visual::after {
-    content: ""; position: absolute; left: 50%; top: calc(20% + 140px); transform: translateX(-50%);
-    width: 340px; height: 70px; background: var(--rnm-blue); border: 3.5px solid var(--rnm-ink);
-    box-shadow: 5px 6px 0 var(--rnm-ink);
-  }
+  .roof-visual { background: url('assets/new-roof.jpg') center/cover no-repeat; }
 </style>
 </head>
 <body data-screen-label="Roofing">
