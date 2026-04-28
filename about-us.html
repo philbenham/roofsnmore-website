@@ -102,11 +102,42 @@
   .meet-phil .role { font-size: 13px; color: var(--rnm-ink-mute); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
   .meet-phil p { font-size: 16px; color: var(--rnm-ink-soft); margin: 20px 0 0; line-height: 1.65; text-align: left; }
 
+  /* Page-hero photo grid */
+  .hero-about { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; }
+  .hero-about-photo {
+    border: 3.5px solid var(--rnm-ink); border-radius: 24px;
+    box-shadow: 6px 8px 0 var(--rnm-ink); overflow: hidden;
+    transform: rotate(-1.2deg);
+  }
+  .hero-about-photo img { display: block; width: 100%; height: auto; }
+
+  /* Story section with photo */
+  .story-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; align-items: flex-start; }
+  .story-grid .story h2 { margin-bottom: 24px; }
+  .story-photo {
+    border: 3.5px solid var(--rnm-ink); border-radius: 24px;
+    box-shadow: 6px 8px 0 var(--rnm-ink); overflow: hidden;
+    transform: rotate(1.5deg); margin-top: 24px;
+  }
+  .story-photo img { display: block; width: 100%; height: auto; }
+
+  /* How-we-work banner photo */
+  .howwork-photo {
+    border: 3.5px solid var(--rnm-ink); border-radius: 24px;
+    box-shadow: 6px 8px 0 var(--rnm-ink); overflow: hidden;
+    transform: rotate(-0.6deg); margin: 36px 0 0;
+  }
+  .howwork-photo img { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; }
+
   @media (max-width: 768px) {
     .promises { grid-template-columns: 1fr; }
     .how-grid { grid-template-columns: 1fr; }
     .honesty-box { padding: 32px 24px 28px; }
     .meet-phil .card { padding: 32px 24px; }
+    .hero-about { grid-template-columns: 1fr; gap: 28px; }
+    .hero-about-photo { transform: rotate(-0.8deg); }
+    .story-grid { grid-template-columns: 1fr; gap: 28px; }
+    .story-photo { transform: rotate(0.8deg); margin-top: 0; }
   }
 </style>
 </head>
@@ -154,22 +185,32 @@
 </script>
 
 <section class="rnm-page-hero">
-  <div class="wrap">
-    <div class="rnm-eyebrow">About Roofs-N-More</div>
-    <h1>New name. Years on the roof.</h1>
-    <p class="lead">Roofs-N-More is a brand-new Kemah-based home exterior contractor. The business is new — the hands behind it aren't. After years on roofs and exteriors, and a long look at how the industry treats Houston homeowners, Phil started Roofs-N-More to do the job the way it should've been done all along.</p>
+  <div class="wrap hero-about">
+    <div>
+      <div class="rnm-eyebrow">About Roofs-N-More</div>
+      <h1>New name. Years on the roof.</h1>
+      <p class="lead">Roofs-N-More is a brand-new Kemah-based home exterior contractor. The business is new — the hands behind it aren't. After years on roofs and exteriors, and a long look at how the industry treats Houston homeowners, Phil started Roofs-N-More to do the job the way it should've been done all along.</p>
+    </div>
+    <div class="hero-about-photo">
+      <img src="assets/about-hero-roofer.jpg" alt="Craftsman walking off a residential rooftop at golden hour" />
+    </div>
   </div>
 </section>
 
 <!-- WHY WE EXIST -->
 <section class="rnm-section white">
-  <div class="wrap story">
-    <div class="rnm-eyebrow">Why we exist</div>
-    <h2>Started Roofs-N-More because the industry needed someone who'd actually do the job right.</h2>
-    <p>I've spent years on roofs and exteriors — and even more time watching how the contracting industry treats Houston homeowners. Surprise change orders mid-job. Crews that show up after a storm, take the deposit, and disappear before the next rain. Punch lists that get ignored once the check clears. Warranties that vanish when the company does.</p>
-    <p>Roofs-N-More is my answer to that. One owner whose name is on the contract. The same hand-picked crews on every job. A 25-year workmanship warranty in writing. And a written estimate that means what it says.</p>
-    <p>We're new. The trade experience isn't. And the promises below aren't going anywhere.</p>
-    <span class="signature">— Phil</span>
+  <div class="wrap story-grid">
+    <div class="story">
+      <div class="rnm-eyebrow">Why we exist</div>
+      <h2>Started Roofs-N-More because the industry needed someone who'd actually do the job right.</h2>
+      <p>I've spent years on roofs and exteriors — and even more time watching how the contracting industry treats Houston homeowners. Surprise change orders mid-job. Crews that show up after a storm, take the deposit, and disappear before the next rain. Punch lists that get ignored once the check clears. Warranties that vanish when the company does.</p>
+      <p>Roofs-N-More is my answer to that. One owner whose name is on the contract. The same hand-picked crews on every job. A 25-year workmanship warranty in writing. And a written estimate that means what it says.</p>
+      <p>We're new. The trade experience isn't. And the promises below aren't going anywhere.</p>
+      <span class="signature">— Phil</span>
+    </div>
+    <div class="story-photo">
+      <img src="assets/about-tailgate-stilllife.jpg" alt="Worn leather work gloves resting on a clipboard with a written estimate, on the tailgate of a pickup truck" />
+    </div>
   </div>
 </section>
 
@@ -218,6 +259,9 @@
     <div class="rnm-eyebrow">How the work actually happens</div>
     <h2>One owner. The same crews. Every job.</h2>
     <p class="lead">Roofs-N-More is one owner-operator and a small set of trusted sub crews. That isn't a weakness — it's the whole accountability story.</p>
+    <div class="howwork-photo">
+      <img src="assets/about-shingle-detail.jpg" alt="Work-gloved hands installing an architectural asphalt shingle on a residential rooftop" />
+    </div>
     <div class="how-grid">
       <div class="how-card">
         <h3>Phil is on every job.</h3>
