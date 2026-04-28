@@ -175,8 +175,6 @@
 (function(){
   var dd = document.getElementById('svc-dropdown');
   var panel = document.getElementById('svc-panel');
-  var toggle = document.getElementById('nav-toggle');
-  var nav = document.getElementById('main-nav');
   var timer;
   function show(){ clearTimeout(timer); panel.style.display = 'block'; }
   function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
@@ -184,19 +182,6 @@
   dd.addEventListener('mouseleave', hide);
   panel.addEventListener('mouseenter', show);
   panel.addEventListener('mouseleave', hide);
-  toggle.addEventListener('click', function(){
-    var open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.textContent = open ? '\u2715' : '\u2630';
-  });
-  // Mobile: tap Services to toggle sub-menu
-  document.getElementById('svc-trigger').addEventListener('click', function(e){
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      dd.classList.toggle('open');
-      panel.style.display = dd.classList.contains('open') ? 'block' : 'none';
-    }
-  });
 })();
 </script>
 
