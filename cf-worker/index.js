@@ -69,6 +69,7 @@ export default {
     // Attach a note with the form details
     if (contact?.id) {
       const lines = [
+        `SMS consent: ${data.smsConsent ? 'Yes (checked at submission)' : 'No'}`,
         `What they need: ${data.need || '—'}`,
         `Services: ${data.services || '—'}`,
         `Zip: ${data.zip || '—'}`,
