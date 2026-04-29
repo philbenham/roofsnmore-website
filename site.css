@@ -68,6 +68,21 @@ img { max-width: 100%; display: block; }
 }
 .rnm-page-hero .wrap { max-width: 1160px; margin: 0 auto; }
 .rnm-eyebrow { font-family: var(--rnm-font-body); font-weight: 900; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rnm-orange-dark); margin-bottom: 12px; }
+
+/* Headline keyword in brand blue — color only, no underline. Wrap the phrase: <span class="rnm-blue-mark">…</span> */
+.rnm-blue-mark { color: var(--rnm-blue); }
+
+/* Phil's blue voice — handwritten Caveat margin annotation. Use sparingly, one per page, to put Phil's personal voice on top of the brand voice. */
+.phil-note { font-family: var(--rnm-font-hand); font-weight: 700; font-size: 22px; line-height: 1.15; color: var(--rnm-blue-dark); display: inline-block; transform: rotate(-3deg); position: relative; text-decoration: none; transition: color 160ms, transform 160ms; }
+a.phil-note:hover { color: var(--rnm-blue); transform: rotate(-3deg) translate(-1px, -1px); }
+.phil-note .phil-arrow { display: inline-block; width: 24px; height: 22px; vertical-align: -6px; margin-right: 2px; color: var(--rnm-blue-dark); }
+.phil-note.right .phil-arrow { margin-right: 0; margin-left: 2px; transform: scaleX(-1); }
+.phil-note.tilt-r { transform: rotate(2.5deg); }
+
+/* Phil's blue ladder — recurring small companion that pops up in a different unexpected spot on each page. Easter-egg roofer prop. */
+.phil-ladder { width: 44px; height: 60px; color: var(--rnm-blue-dark); pointer-events: none; opacity: 0.85; }
+.phil-ladder.tilt-l { transform: rotate(-7deg); }
+.phil-ladder.tilt-r { transform: rotate(8deg); }
 .rnm-page-hero h1 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 60px; line-height: 1.02; letter-spacing: -0.01em; margin: 0 0 16px; }
 .rnm-page-hero .lead { font-family: var(--rnm-font-body); font-weight: 600; font-size: 19px; line-height: 1.5; color: var(--rnm-ink-soft); max-width: 680px; margin: 0; }
 
