@@ -99,6 +99,16 @@
         </div>
       </div>
     </div>
+    <div class="nav-dropdown" id="loc-dropdown">
+      <a href="#" id="loc-trigger">Locations &#9662;</a>
+      <div class="dropdown-panel" id="loc-panel" style="display:none">
+        <div class="dropdown-panel-inner">
+          <a href="location-friendswood.html">Friendswood</a>
+          <a href="location-galveston.html">Galveston</a>
+          <a href="location-league-city.html">League City</a>
+        </div>
+      </div>
+    </div>
     <a href="about-us.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
@@ -109,20 +119,6 @@
     <button class="rnm-nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
 </header>
-<script>
-(function(){
-  var dd = document.getElementById('svc-dropdown');
-  var panel = document.getElementById('svc-panel');
-  var timer;
-  function show(){ clearTimeout(timer); panel.style.display = 'block'; }
-  function hide(){ timer = setTimeout(function(){ panel.style.display = 'none'; }, 80); }
-  dd.addEventListener('mouseenter', show);
-  dd.addEventListener('mouseleave', hide);
-  panel.addEventListener('mouseenter', show);
-  panel.addEventListener('mouseleave', hide);
-})();
-</script>
-
 <article class="article">
   <div class="tag">Education · 7 min read</div>
   <h1>What happens during a roof inspection? A Houston homeowner's guide</h1>
