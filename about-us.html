@@ -16,25 +16,63 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Roofs-N-More",
-  "legalName": "Roofs-N-More LLC",
-  "url": "https://roofsnmore.com",
-  "logo": "https://roofsnmore.com/assets/logo-mascot.png",
-  "founder": { "@type": "Person", "name": "Phil Benham" },
-  "description": "Roofs-N-More is a Kemah, TX home exterior contractor offering roof replacement, siding, windows, and seamless gutter installation across Greater Houston. Insured, with a 25-year workmanship warranty and fixed-price written estimates.",
-  "telephone": "+18329910928",
-  "email": "info@roofsnmore.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "437 Holly Branch Lane",
-    "addressLocality": "Kemah",
-    "addressRegion": "TX",
-    "postalCode": "77565",
-    "addressCountry": "US"
-  },
-  "areaServed": "Greater Houston, TX",
-  "knowsAbout": ["Roof Replacement", "Siding Installation", "Window Replacement", "Gutter Installation"]
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://roofsnmore.com/about-us.html#page",
+      "url": "https://roofsnmore.com/about-us.html",
+      "name": "About Roofs-N-More",
+      "description": "Roofs-N-More is a Kemah, TX home exterior contractor. Owner-led roofing, siding, windows, and gutters across Greater Houston. Insured, with a 25-year workmanship warranty and fixed-price written estimates.",
+      "isPartOf": { "@id": "https://roofsnmore.com/#business" },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://roofsnmore.com/assets/logo-mascot.png" },
+      "breadcrumb": { "@id": "https://roofsnmore.com/about-us.html#breadcrumb" },
+      "mainEntity": { "@id": "https://roofsnmore.com/#business" },
+      "about": [
+        { "@id": "https://roofsnmore.com/#business" },
+        { "@id": "https://roofsnmore.com/#phil-benham" }
+      ]
+    },
+    {
+      "@type": "RoofingContractor",
+      "@id": "https://roofsnmore.com/#business",
+      "name": "Roofs-N-More",
+      "legalName": "Roofs-N-More LLC",
+      "url": "https://roofsnmore.com",
+      "logo": "https://roofsnmore.com/assets/logo-mascot.png",
+      "description": "Roofs-N-More is a Kemah, TX home exterior contractor offering roof replacement, siding, windows, and seamless gutter installation across Greater Houston. Insured, with a 25-year workmanship warranty and fixed-price written estimates.",
+      "telephone": "+18329910928",
+      "email": "info@roofsnmore.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "437 Holly Branch Lane",
+        "addressLocality": "Kemah",
+        "addressRegion": "TX",
+        "postalCode": "77565",
+        "addressCountry": "US"
+      },
+      "areaServed": "Greater Houston, TX",
+      "founder": { "@id": "https://roofsnmore.com/#phil-benham" },
+      "knowsAbout": ["Roof Replacement", "Siding Installation", "Window Replacement", "Gutter Installation", "Residential Concrete"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://roofsnmore.com/#phil-benham",
+      "name": "Phil Benham",
+      "jobTitle": "Owner & Founder",
+      "telephone": "+18329910928",
+      "email": "info@roofsnmore.com",
+      "worksFor": { "@id": "https://roofsnmore.com/#business" },
+      "knowsAbout": ["Roof Replacement", "Storm Damage Inspection", "Insurance Claim Documentation", "Home Exterior Renovation"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://roofsnmore.com/about-us.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roofsnmore.com/" },
+        { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://roofsnmore.com/about-us.html" }
+      ]
+    }
+  ]
 }
 </script>
 <link rel="stylesheet" href="colors_and_type.css">
