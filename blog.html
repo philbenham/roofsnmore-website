@@ -60,8 +60,7 @@
     background: #fff; border: 3.5px solid var(--rnm-ink); border-radius: 28px;
     box-shadow: 6px 8px 0 var(--rnm-ink); padding: 32px; margin-bottom: 56px;
   }
-  .featured .cover { aspect-ratio: 5/4; border: 3px solid var(--rnm-ink); border-radius: 20px; background: linear-gradient(var(--rnm-blue-soft) 50%, var(--rnm-orange-soft) 50%); position: relative; }
-  .featured .cover::before { content: ""; position: absolute; left: 50%; top: 20%; transform: translateX(-50%); width: 0; height: 0; border-left: 120px solid transparent; border-right: 120px solid transparent; border-bottom: 80px solid var(--rnm-orange); filter: drop-shadow(3px 4px 0 var(--rnm-ink)); }
+  .featured .cover { aspect-ratio: 5/4; border: 3px solid var(--rnm-ink); border-radius: 20px; background: url('assets/roof-needs-replacing-houston-tx.jpg') center/cover no-repeat; position: relative; }
   .featured .cover::after { content: "Featured"; position: absolute; top: 18px; left: 18px; background: var(--rnm-ink); color: #fff; padding: 6px 14px; border-radius: 999px; font-family: var(--rnm-font-display); font-weight: 600; font-size: 13px; }
   .featured .tag { display: inline-block; background: var(--rnm-orange-soft); border: 2.5px solid var(--rnm-ink); padding: 4px 12px; border-radius: 999px; font-family: var(--rnm-font-display); font-weight: 600; font-size: 13px; margin-bottom: 12px; }
   .featured h2 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 40px; line-height: 1.08; margin: 0 0 14px; letter-spacing: -0.01em; }
@@ -78,37 +77,6 @@
   .post h3 { font-family: var(--rnm-font-display); font-weight: 700; font-size: 22px; line-height: 1.2; margin: 0 0 8px; }
   .post p { font-size: 14px; color: var(--rnm-ink-soft); line-height: 1.55; margin: 0 0 14px; }
   .post .meta { display: flex; gap: 10px; font-size: 12px; color: var(--rnm-ink-mute); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
-
-  .cv-a { background: linear-gradient(var(--rnm-blue-soft), var(--rnm-sky)); position: relative; }
-  .cv-a::before { content: "☀️"; position: absolute; top: 30%; left: 50%; transform: translate(-50%,-50%); font-size: 68px; }
-  .cv-a::after { content: ""; position: absolute; bottom: 20%; left: 20%; right: 20%; height: 30%; background: var(--rnm-orange-dark); border: 3px solid var(--rnm-ink); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
-
-  .cv-b { background: var(--rnm-cream); position: relative; display: grid; place-items: center; }
-  .cv-b::before { content: ""; width: 60%; height: 55%; background: repeating-linear-gradient(to bottom, var(--rnm-blue) 0 18px, var(--rnm-blue-dark) 18px 20px, var(--rnm-blue) 20px 38px); border: 3px solid var(--rnm-ink); border-radius: 6px; box-shadow: 4px 5px 0 var(--rnm-ink); }
-
-  .cv-c { background: linear-gradient(var(--rnm-blue-darker), var(--rnm-blue-dark)); position: relative; }
-  .cv-c::before { content: "💨"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 72px; }
-
-  .cv-d { background: var(--rnm-orange-soft); position: relative; display: grid; place-items: center; }
-  .cv-d::before { content: ""; width: 55%; height: 55%; background: linear-gradient(var(--rnm-ink), var(--rnm-ink)) 50% 50%/4px 100%, linear-gradient(var(--rnm-ink), var(--rnm-ink)) 50% 50%/100% 4px, #FFF; background-repeat: no-repeat; border: 4px solid var(--rnm-ink); border-radius: 6px; box-shadow: 4px 5px 0 var(--rnm-ink); }
-
-  .cv-e { background: var(--rnm-sky); position: relative; }
-  .cv-e::before { content: "🧾"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 72px; }
-
-  .cv-f { background: var(--rnm-sand); position: relative; }
-  .cv-f::before { content: ""; position: absolute; top: 35%; left: 15%; right: 15%; height: 22px; background: var(--rnm-orange); border: 3px solid var(--rnm-ink); border-radius: 0 0 12px 12px; box-shadow: 4px 4px 0 var(--rnm-ink); }
-
-  .cv-g { background: linear-gradient(135deg, var(--rnm-blue-soft) 0%, var(--rnm-orange-soft) 100%); position: relative; }
-  .cv-g::before { content: "$"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--rnm-font-display); font-weight: 700; font-size: 96px; color: var(--rnm-ink); opacity: 0.2; }
-
-  .cv-h { background: linear-gradient(var(--rnm-blue-darker), var(--rnm-blue-dark)); position: relative; }
-  .cv-h::before { content: "⛈"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); font-size: 68px; }
-
-  .cv-i { background: var(--rnm-sky); position: relative; display: grid; place-items: center; }
-  .cv-i::before { content: "🔍"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); font-size: 68px; }
-
-  .cv-j { background: var(--rnm-cream); position: relative; }
-  .cv-j::before { content: "?"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--rnm-font-display); font-weight: 700; font-size: 110px; color: var(--rnm-orange); opacity: 0.3; }
 
 
 
@@ -227,7 +195,7 @@
         </div>
       </a>
       <a href="/blog-hardie-vs-vinyl" class="post">
-        <div class="cover cv-b"></div>
+        <div class="cover" style="background:url(\'assets/fiber-cement-siding-houston-tx.jpg\') center/cover no-repeat;"></div>
         <div class="body">
           <div class="tag">Siding</div>
           <h3>Best siding materials for Houston's heat, humidity &amp; hail</h3>
@@ -236,7 +204,7 @@
         </div>
       </a>
       <a href="/blog-hurricane-ready" class="post">
-        <div class="cover cv-c"></div>
+        <div class="cover" style="background:url(\'assets/hurricane-storm-houston-rooftops.jpg\') center/cover no-repeat;"></div>
         <div class="body">
           <div class="tag">Storm prep</div>
           <h3>The 8 things we check on every customer's roof before hurricane season</h3>
@@ -245,7 +213,7 @@
         </div>
       </a>
       <a href="/blog-does-my-roof-need-replacing" class="post">
-        <div class="cover cv-a"></div>
+        <div class="cover" style="background:url(\'assets/roof-needs-replacing-houston-tx.jpg\') center/cover no-repeat;"></div>
         <div class="body">
           <div class="tag">Roofing</div>
           <h3>7 signs your Houston roof needs replacement (not just repair)</h3>
@@ -254,7 +222,7 @@
         </div>
       </a>
       <a href="/blog-gutters-houston" class="post">
-        <div class="cover cv-f"></div>
+        <div class="cover" style="background:url(\'assets/gutters-heavy-rain-houston-tx.jpg\') center/cover no-repeat;"></div>
         <div class="body">
           <div class="tag">Gutters</div>
           <h3>Why gutters are non-negotiable in Houston (and what to do about it)</h3>
@@ -263,7 +231,7 @@
         </div>
       </a>
       <a href="/blog-roof-insurance-claim" class="post">
-        <div class="cover cv-e"></div>
+        <div class="cover" style="background:url(\'assets/storm-damage-roof-claim-houston-tx.jpg\') center/cover no-repeat;"></div>
         <div class="body">
           <div class="tag">Insurance</div>
           <h3>How to file a roof insurance claim in Texas (step-by-step)</h3>
@@ -272,7 +240,7 @@
         </div>
       </a>
       <a href="/blog-exterior-upgrades-2025" class="post">
-        <div class="cover cv-d"></div>
+        <div class="cover" style="background:url(\'assets/home-exterior-upgrades-houston-tx.jpg\') center/cover no-repeat;"></div>
         <div class="body">
           <div class="tag">Home value</div>
           <h3>5 exterior upgrades that add the most value to Houston homes in 2025</h3>
@@ -281,7 +249,7 @@
         </div>
       </a>
       <a href="/blog-houston-roof-cost-guide" class="post">
-        <div class="cover cv-g"></div>
+        <div class="cover" style="background:url(\'assets/roof-replacement-crew-houston-tx.jpg\') center/cover no-repeat;"></div>
         <div class="body">
           <div class="tag">Pricing</div>
           <h3>How much does a roof replacement cost in Houston? (2026 guide)</h3>
@@ -290,7 +258,7 @@
         </div>
       </a>
       <a href="/blog-hail-season-texas-guide" class="post">
-        <div class="cover cv-h"></div>
+        <div class="cover" style="background:url(\'assets/hail-damage-roof-shingles-texas.jpg\') center/cover no-repeat;"></div>
         <div class="body">
           <div class="tag">Storm prep</div>
           <h3>Texas hail season: what Houston homeowners need to know</h3>
@@ -299,7 +267,7 @@
         </div>
       </a>
       <a href="/blog-what-happens-roof-inspection" class="post">
-        <div class="cover cv-i"></div>
+        <div class="cover" style="background:url(\'assets/roof-inspection-ladder-houston-tx.jpg\') center/cover no-repeat;"></div>
         <div class="body">
           <div class="tag">Education</div>
           <h3>What happens during a roof inspection? A complete walkthrough</h3>
@@ -308,7 +276,7 @@
         </div>
       </a>
       <a href="/blog-questions-to-ask-a-roofer" class="post">
-        <div class="cover cv-j"></div>
+        <div class="cover" style="background:url(\'assets/hiring-roofer-houston-tx.jpg\') center/cover no-repeat;"></div>
         <div class="body">
           <div class="tag">Hiring guide</div>
           <h3>12 questions to ask a roofer before hiring them</h3>
