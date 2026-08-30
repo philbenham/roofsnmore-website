@@ -26,7 +26,7 @@ Static HTML marketing site for **roofsnmore.com** — a swap-in replacement curr
 
 ## Business info
 - Phone: 832-991-0928
-- Address: 437 Holly Branch Lane, Kemah, TX 77565
+- Address: no public storefront — we come to you; based in Kemah, TX (do not publish a street address)
 - Owner: Phil Benham
 - Estimate tool: https://quote.roofsnmore.com/s/59b06a
 - Service areas: Houston, League City, Friendswood, Pearland, Kemah, Webster, Clear Lake, Seabrook, La Marque, Galveston, Pasadena, Alvin, Deer Park
