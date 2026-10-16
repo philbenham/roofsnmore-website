@@ -6,7 +6,44 @@
   "headers": [
     {
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/blog-insurance-says-replace-roof",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog-roof-insurance-claim",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog-can-insurance-make-me-replace-roof",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog-roof-too-old-for-insurance",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog-hail-season-texas-guide",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog-hurricane-ready",
+      "destination": "/blog",
+      "permanent": true
     }
   ]
 }

@@ -143,12 +143,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://roofsnmore.com/blog-hurricane-ready</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://roofsnmore.com/blog-does-my-roof-need-replacing</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
@@ -173,19 +167,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://roofsnmore.com/blog-roof-insurance-claim</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://roofsnmore.com/blog-houston-roof-cost-guide</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://roofsnmore.com/blog-hail-season-texas-guide</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -221,23 +203,5 @@
     <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://roofsnmore.com/blog-insurance-says-replace-roof</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://roofsnmore.com/blog-can-insurance-make-me-replace-roof</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://roofsnmore.com/blog-roof-too-old-for-insurance</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 </urlset>
