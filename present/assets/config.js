@@ -40,9 +40,9 @@ window.REVITALIZE_CONFIG = {
 
   /* ---------- DISCOUNTS asked BEFORE the price (Step 9) ---------- */
   DISCOUNTS: {
-    military:       { label: "Military",         amount: 250, placeholder: true },
-    senior:         { label: "Senior Citizen",   amount: 250, placeholder: true },
-    firstResponder: { label: "First Responder",  amount: 250, placeholder: true }
+    military:       { label: "Military",         amount: 250, placeholder: false },
+    senior:         { label: "Senior Citizen",   amount: 250, placeholder: false },
+    firstResponder: { label: "First Responder",  amount: 250, placeholder: false }
   },
 
   /* ---------- PROMOTIONS revealed AFTER the price (Step 9) ---------- */
@@ -55,10 +55,10 @@ window.REVITALIZE_CONFIG = {
      Remodeling magazine Cost vs Value report, Houston, roof replacement.
      Leave null to show "PHIL TO CONFIRM"; the rep can also type it live. */
   CVV: {
-    edition: "2026",
-    houstonRoofCost: null,      // e.g. average $ for a typical 30-square roof
+    edition: "2025",
+    houstonRoofCost: 27116,     // 2025 CvV, West South Central region (Houston city figure not published/accessible), asphalt shingles, 30-sq spec. Resale value $18,478. https://www.jlconline.com/cost-vs-value/2025/west-south-central/
     typicalSquares: 30,
-    resaleRecoupPct: null       // e.g. 60  (percent recouped at resale)
+    resaleRecoupPct: 68.1     // 2025 CvV West South Central, roofing replacement (asphalt shingles)
   },
 
   /* ---------- CLOSE WORDING ---------- */
