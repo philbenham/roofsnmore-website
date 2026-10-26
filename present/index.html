@@ -362,6 +362,7 @@
       <p class="lineitem">or only <b class="pMonthlyMirror">$0</b> a month</p>
       <button class="reveal apply" data-promo="initialVisit">Apply Initial Visit Discount</button>
       <p class="promoamt" data-promoamt="initialVisit"></p>
+      <input class="repamt no-swipe" data-repamt="initialVisit" type="number" inputmode="numeric" min="0" step="50" placeholder="$" aria-label="Rep amount" autocomplete="off">
     </div>
   </div>
   <div class="tiedown"><span>Ask</span><q>Now I know with a discount like that on the table, we can earn your business. Which day would you prefer: <span data-bind="day1">Thursday</span> or <span data-bind="day2">Friday</span>?</q></div>
@@ -383,6 +384,7 @@
       <p class="lineitem">or only <b class="pMonthlyMirror">$0</b> a month</p>
       <button class="reveal apply" data-promo="marketing">Apply Marketing Discount</button>
       <p class="promoamt" data-promoamt="marketing"></p>
+      <input class="repamt no-swipe" data-repamt="marketing" type="number" inputmode="numeric" min="0" step="50" placeholder="$" aria-label="Rep amount" autocomplete="off">
     </div>
   </div>
   <div class="tiedown"><span>Ask</span><q>If we’re able to make this more affordable with another promotion, would you be willing to have a sign in your yard for 30 days after the job? And without putting any identifying info out there, could we use before and after photos for our online marketing? And if we do a bang up job, would you be willing to write a solid 5-star review for us on Google?</q></div>
@@ -400,7 +402,8 @@
     <div class="glass">
       <img class="cover-logo" src="assets/img/logo-mark.png" alt="" style="width:110px">
       <p class="eyebrow">What happens next</p>
-      <ol class="next"><li>We order materials</li><li>Pull permits</li><li>You’ll get a call about your install date</li></ol>
+      <ol class="next"><li>Order and purchase city permit</li><li>Order materials</li><li>Deliver materials day before install<span class="nextdate" id="deliverDate"></span></li><li>Install Date: <b id="installDate">________</b></li></ol>
+      <label class="repdate no-swipe"><span>Install date</span><input type="date" id="installPick" class="no-swipe" aria-label="Install date"></label>
       
       <p>You’ll probably think of questions. It’s a big purchase. If it’s 10 o’clock tonight and something comes up, call me anytime.</p>
       <p class="phone">832-991-0928</p>

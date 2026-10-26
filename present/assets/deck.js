@@ -62,7 +62,7 @@
     $('#pr1Was').textContent = S.promo.initialVisit ? fmt(p.preTotal) : '';
     $('#pr2Was').textContent = S.promo.marketing ? fmt(p.preTotal - (S.promo.initialVisit ? C.PROMOS.initialVisit.amount : 0)) : '';
     $$('[data-promoamt]').forEach(function (el) { var k = el.getAttribute('data-promoamt'), pr = C.PROMOS[k]; el.innerHTML = S.promo[k] ? (pr.label + ': −' + fmt(pr.amount) + (pr.placeholder ? ' ' + ptcTag : '')) : ''; });
-    $$('.apply').forEach(function (b) { var k = b.getAttribute('data-promo'); b.disabled = !!S.promo[k]; b.textContent = S.promo[k] ? '✓ ' + C.PROMOS[k].label + ' applied' : 'Apply ' + C.PROMOS[k].label; });
+    $$('.apply').forEach(function (b) { var k = b.getAttribute('data-promo'); b.hidden = !(C.PROMOS[k].amount > 0) && !S.promo[k]; b.disabled = !!S.promo[k]; b.textContent = S.promo[k] ? '✓ ' + C.PROMOS[k].label + ' applied' : 'Apply ' + C.PROMOS[k].label; });
     // CvV
     var cvv = +($('#cvvCost').value || 0);
     var per = cvv ? cvv / C.CVV.typicalSquares : 0;
@@ -173,10 +173,11 @@
   };
   function reveal() { S.revealed = true; S.shownTotal = 0; $('#priceCard').classList.add('shown'); renderPrice(true); }
   $('#revealBtn').addEventListener('click', reveal);
-  function applyPromo(k) { if (S.promo[k]) return false; S.promo[k] = true; renderPrice(true); return true; }
+  function applyPromo(k) { if (S.promo[k] || !(C.PROMOS[k].amount > 0)) return false; S.promo[k] = true; renderPrice(true); return true; }
   function unapplyPromo(k) { if (!S.promo[k]) return false; S.promo[k] = false; renderPrice(true); return true; }
   handlers.promo1 = { next: function () { return applyPromo('initialVisit'); }, prev: function () { return unapplyPromo('initialVisit'); } };
   handlers.promo2 = { next: function () { return applyPromo('marketing'); }, prev: function () { return unapplyPromo('marketing'); } };
+  $$('.repamt').forEach(function (inp) { ['input','change'].forEach(function (ev) { inp.addEventListener(ev, function () { var k = inp.getAttribute('data-repamt'), v = Math.max(0, Math.round(+inp.value || 0)); C.PROMOS[k].amount = v; if (!v) S.promo[k] = false; renderPrice(false); }); }); inp.addEventListener('keydown', function (e) { e.stopPropagation(); if (e.key === 'Enter') inp.blur(); }); });
   $$('.apply').forEach(function (b) { b.addEventListener('click', function () { applyPromo(b.getAttribute('data-promo')); }); });
 
   // ---------------- inputs ----------------
@@ -242,3 +243,12 @@
   go(isNaN(start) ? 0 : start - 1);
   window.__deck = { go: go, next: next, prev: prev, S: S, price: price };
 })();
+
+(function(){var p=document.getElementById('installPick');if(!p)return;
+function f(dt){return dt.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});}
+function u(){var i=document.getElementById('installDate'),dl=document.getElementById('deliverDate');
+if(!p.value){i.textContent='________';dl.textContent='';return;}
+var a=p.value.split('-'),dt=new Date(+a[0],a[1]-1,+a[2],12),pr=new Date(dt);pr.setDate(pr.getDate()-1);
+i.textContent=f(dt);dl.textContent=': '+f(pr);}
+p.addEventListener('input',u);p.addEventListener('change',u);
+p.addEventListener('keydown',function(e){e.stopPropagation();});u();})();

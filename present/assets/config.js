@@ -45,10 +45,12 @@ window.REVITALIZE_CONFIG = {
     firstResponder: { label: "First Responder",  amount: 250, placeholder: false }
   },
 
-  /* ---------- PROMOTIONS revealed AFTER the price (Step 9) ---------- */
+  /* ---------- PROMOTIONS revealed AFTER the price (Step 9) ----------
+     Amounts are entered live by the rep (small "$" field at the bottom-left
+     of each promo slide). 0 = no promotion; the reveal is hidden/skipped. */
   PROMOS: {
-    initialVisit: { label: "Initial Visit Discount", amount: 1500, placeholder: true },
-    marketing:    { label: "Marketing Discount",     amount: 1000, placeholder: true }
+    initialVisit: { label: "Initial Visit Discount", amount: 0, placeholder: false },
+    marketing:    { label: "Marketing Discount",     amount: 0, placeholder: false }
   },
 
   /* ---------- COST VS VALUE (Step 7) ----------
