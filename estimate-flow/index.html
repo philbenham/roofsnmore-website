@@ -45,8 +45,8 @@
   .intro p { font-family: var(--rnm-font-body); font-weight: 600; font-size: 17px; color: var(--rnm-ink-soft); line-height: 1.5; margin: 10px 0 0; max-width: 620px; }
 
   .iframe-wrap {
-    background: #fff; border: 3px solid var(--rnm-ink); border-radius: 24px;
-    box-shadow: 6px 7px 0 var(--rnm-ink);
+    background: transparent; border: 0; border-radius: 0;
+    box-shadow: none;
     overflow: hidden; position: relative; min-height: 680px;
   }
   .iframe-wrap .bar {
@@ -92,7 +92,9 @@
     .trust { padding: 10px 16px; gap: 16px; font-size: 13px; }
     main { padding: 20px 16px 40px; }
     .intro h1 { font-size: 26px; }
-    .iframe-wrap iframe { height: 600px; }
+    .iframe-wrap iframe { height: 85vh; min-height: 640px; }
+    main { padding-left: 0; padding-right: 0; }
+    .intro { padding: 0 16px; }
   }
 </style>
 </head>
@@ -129,11 +131,6 @@
   </div>
 
   <section class="iframe-wrap" id="estimatorFrame">
-    <div class="bar">
-      <div class="dots"><div class="dot" style="background:var(--rnm-orange)"></div><div class="dot" style="background:var(--rnm-blue)"></div><div class="dot" style="background:#fff"></div></div>
-      <div>rehashhero.com</div>
-      <div class="url">https://rehashhero.com/s/roofs-n-more/quote</div>
-    </div>
     <iframe id="estimator" src="https://rehashhero.com/s/roofs-n-more/quote" title="Roofs-N-More AI estimator" allow="geolocation; clipboard-write"></iframe>
     <div class="fallback">
       <img loading="lazy" decoding="async" src="../assets/logo-mascot.png" alt="" />
